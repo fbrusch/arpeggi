@@ -1,0 +1,4386 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sonic Pi Submissions</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+            table { width: 100%; border-collapse: collapse; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
+            .modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; }
+            .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+            .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
+            pre { background-color: #f4f4f4; padding: 10px; overflow-x: auto; }
+        </style>
+    </head>
+    <body>
+        <h1>Sonic Pi Submissions</h1>
+        <table>
+            <tr>
+                <th>Email</th>
+                <th>Timestamp</th>
+                <th>Code</th>
+                <th>Recording</th>
+            </tr>
+    
+            <tr>
+                <td>melanialuisanna.moras@mail.polimi.it</td>
+                <td>10/11/2024 16:06:01</td>
+                <td><button onclick="openModal(0)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/2d02892e5e0c673f8462d20175bb017a4d5c30c98c6e67751741bc686547ce1e_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal0" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(0)">×</span>
+                    <h2>Code for submission by melanialuisanna.moras@mail.polimi.it</h2>
+                    <pre>
+            #very weird fishes
+
+arpeggio_re = [:d4, :g3, :e3]
+arpeggio_mi = [:e4, :a3, :fs3]
+last_mi = [:e4, :a3, :c4]
+arpeggio_la = [:a4, :c4, :a3]
+time = 0.3
+
+
+sample :ambi_glass_hum, release: 1.8
+sleep 4.5
+cue :start
+
+
+
+in_thread do
+  cue :start
+  2.times do
+    use_synth :bass_foundation
+    with_fx :wobble, phase: 0.9, invert_wave: 1, amp: 0.2 do
+      
+      10.times do
+        play_pattern_timed arpeggio_re, time, release: 0.8
+        
+      end
+      cue :beat
+      9.times do
+        play_pattern_timed arpeggio_mi, time, release: 0.8
+      end
+      play_pattern_timed last_mi, time, release: 0.8
+      cue :beat2
+      5.times do
+        play_pattern_timed arpeggio_la, time, release: 0.8
+      end
+    end
+  end
+  cue :startoutro
+end
+
+
+
+in_thread do
+  
+  4.times do
+    sync :beat
+    sample :ambi_glass_hum, release: 4.5
+    sleep 9
+  end
+end
+
+in_thread do
+  sync :beat2
+  sample :ambi_glass_rub, release: 4.5, amp: 0.2
+  40.times do
+    sample :drum_tom_mid_soft, amp: 0.1
+    sleep 0.3
+    sample :bass_trance_c, amp: 0.2, release: 0.3
+    sleep 0.6
+  end
+end
+
+
+sync :startoutro
+sample :ambi_glass_hum, release: 6, decay: 5
+sleep 9
+
+use_synth :kalimba
+with_fx :slicer, phase: 0.3 do |fx|
+  in_thread do
+    70.times do |i|
+      control fx, amp: (5.0 / 70) * i
+      sleep 0.1
+    end
+  end
+  20.times do
+    play_pattern_timed arpeggio_re, time, release: 0.8
+  end
+end
+
+use_synth :square
+sleep 0.25
+play :d5, amp: 0.1, release: 4 #no signal
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>gabriele.agazzi@mail.polimi.it</td>
+                <td>10/11/2024 16:10:23</td>
+                <td><button onclick="openModal(1)">View Code</button></td>
+                <td>
+            Recording not found.</td></tr>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(1)">×</span>
+                    <h2>Code for submission by gabriele.agazzi@mail.polimi.it</h2>
+                    <pre>
+            Unable to decode file content. The file may contain non-UTF-8 characters.
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>filippo.paris@mail.polimi.it - giorgio.mattina@mail.polimi.it - francesco14.moretti@mail.polimi.it</td>
+                <td>10/11/2024 16:16:13</td>
+                <td><button onclick="openModal(2)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/feafc9934aacab91d328cfdf6c5b90b6244ae23186adeecd45951a75970bc2d5_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(2)">×</span>
+                    <h2>Code for submission by filippo.paris@mail.polimi.it - giorgio.mattina@mail.polimi.it - francesco14.moretti@mail.polimi.it</h2>
+                    <pre>
+            ## RADIOHEAD - ARPGEGGI
+## Gruppo: Francesco Moretti, Filippo Paris, Giorgio Mattina
+
+use_bpm 153
+
+$list = [0.8, 0.9, 1, 1.1, 1.2]
+
+# CHORDS MAIN GUITAR
+accordo1 = [:e5, :g4, :e4]
+accordo2 = [:e5, :a4, 66]
+accordo3 = [:a5, 73, :a4]
+accordo4 = [78, :b4, :g4]
+
+# CHORDS SECOND GUITAR
+accordo5 = [:g5, :e5, :d5]
+accordo6 = [:g4, :d5, :e5]
+accordo7 = [:a4, :e5, 78]
+accordo8 = [:a5, :e5, 73]
+
+# DRUMS
+define :kick_snare do
+  sample :bd_tek, amp: 3, release: 0.4  # Kick drum
+  sleep 0.5
+  sample :bd_tek, amp: 3  # Kick drum
+  sleep 0.5
+  with_fx :reverb, room: 0.1, mix: 0.3 do
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.75
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 1.25
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.75
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 1.25
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.75
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 1.25
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.75
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.25
+  end
+  
+  sample :bd_tek, amp: 3, release: 0.6 # Kick drum
+  sleep 1
+  with_fx :reverb, room: 0.1, mix: 0.3 do
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.75
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 1.25
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.75
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 1.25
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.75
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 1.25
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.75
+    sample :drum_snare_hard, sustain: 0.1, amp: choose($list)
+    sleep 0.25
+  end
+end
+
+define :hihat do
+  sample :drum_cymbal_closed, rate: 4, sustain: 0.03, amp: 5
+  sleep 0.5
+end
+
+# ARPEGGI MAIN GUITAR
+define :play_arpeggio do |note|
+  use_synth :piano
+  with_fx :reverb, amp: 2, room: 1 do
+    for i in 0..2 do
+      play note[i]
+      sleep 0.5
+    end
+  end
+end
+
+# ARPEGGI SECOND GUITAR
+define :play_2nd_arpeggio do |note|
+  use_synth :pluck
+  with_fx :reverb, amp: 1.5, room: 0.4 do
+    for i in 0..2 do
+      play note[i]
+      sleep 0.5
+    end
+    
+    play note[0]
+    sleep 0.5
+    play note[2]
+    sleep 0.5
+  end
+end
+
+define :play_3rd_arpeggio do |note|
+  use_synth :pluck
+  with_fx :reverb, amp: 1.5, room: 0.4 do
+    for i in 0..2 do
+      play note[i]
+      sleep 0.5
+    end
+    
+    play note[0]
+    sleep 0.5
+    play note[1]
+    sleep 0.5
+  end
+end
+
+
+define :play_4th_arpeggio do |note|
+  use_synth :pluck
+  with_fx :reverb, amp: 1.5, room: 0.4 do
+    for i in 0..2 do
+      play note[i]
+      sleep 0.5
+    end
+    
+    play note[1]
+    sleep 0.5
+    play note[2]
+    sleep 0.5
+  end
+end
+
+#--------------------------------------------------------------------------------
+#STICKS
+in_thread do
+  for i in 0..3 do
+    sample :drum_cowbell, amp: 5, hpf_attack: 10
+    sleep 1
+  end
+end
+
+# DRUMS
+in_thread do
+  sleep 4
+  loop do
+    hihat
+  end
+end
+
+in_thread do
+  sleep 4
+  loop do
+    kick_snare
+  end
+end
+
+# MAIN GUITAR
+in_thread do
+  sleep 20
+  loop do
+    10.times do
+      play_arpeggio(accordo1)
+    end
+    
+    11.times do
+      play_arpeggio(accordo2)
+    end
+    
+    11.times do
+      play_arpeggio(accordo3)
+    end
+    
+    10.times do
+      play_arpeggio(accordo4)
+    end
+    
+    play :d5
+    sleep 0.5
+    play :g4
+    sleep 0.5
+  end
+end
+
+# SECOND GUITAR
+in_thread do
+  sleep 68 # start with accordo4
+  loop do
+    6.times do
+      play_2nd_arpeggio(accordo5)
+    end
+    
+    play :g5
+    sleep 0.5
+    play :e5
+    sleep 0.5
+    
+    6.times do
+      play_2nd_arpeggio(accordo6)
+    end
+    
+    play :g4
+    sleep 0.5
+    play :d5
+    sleep 0.5
+    
+    play :e5
+    sleep 0.5
+    play :a4
+    sleep 0.5
+    play :e5
+    sleep 0.5
+    
+    5.times do
+      play_3rd_arpeggio(accordo7)
+    end
+    
+    play :a4
+    sleep 0.5
+    play :e5
+    sleep 0.5
+    play 78
+    sleep 0.5
+    play 73
+    sleep 0.5
+    
+    play :e5
+    sleep 0.5
+    play 73
+    sleep 0.5
+    play :e5
+    sleep 0.5
+    
+    4.times do
+      play_4th_arpeggio(accordo8)
+    end
+    
+    play :a5
+    sleep 0.5
+  end
+end
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>piermatteo.marzola@mail.polimi.it</td>
+                <td>10/11/2024 16:24:22</td>
+                <td><button onclick="openModal(3)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/12e06459feccb85a1a1165fae9b7ed8b05e1366849bd3e7e1cefd28002dda4cc_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(3)">×</span>
+                    <h2>Code for submission by piermatteo.marzola@mail.polimi.it</h2>
+                    <pre>
+            #2 minutes long
+
+use_bpm 65
+chords1 = [ chord(:e3, :minor7), chord(:fs3, :minor7), chord(:a3, :major), chord(:g2, :major7)]
+chordsOut = [chord(:b3, :minor), chord(:C3, :major), chord(:b3, :minor), chord(:a3, :major), chord(:g2, :major7)]
+bassSeq = [:e4, :fs4, :a4, :g4]
+melody2 = [:e4, :e4, :fs4, :g4, :a4, :d5, :e5, :d5, :cs5, :b4]
+melodyOut = [:b4, :b4, :g5, :e5, :c5, :b4, :b4, :e5, :c5, :a4, :a4, :b4]
+
+
+#funcion that plays the arpeggio base
+def play_arpeggio(seq)
+  seq.each do |n|
+    if n.size() == 4
+      4.times do
+        play_pattern_timed n, 0.25, amp: 0.3
+      end
+    else
+      4.times do
+        play_pattern_timed n, 0.3333333, amp: 0.3 #if i put 1/3 the sound is corrupted
+      end
+    end
+  end
+end
+
+#funcion that plays the sequence of repeated notes
+def play_seq (seq)
+  seq.each do |n|
+    play n, release: 3.5, amp: 0.5
+    sleep 4
+  end
+end
+
+
+
+#sequence
+in_thread do
+  sleep 16
+  4.times do
+    with_fx :reverb do
+      use_synth :chiplead
+      with_fx :ping_pong do
+        with_fx :slicer do
+          play_seq bassSeq
+        end
+      end
+    end
+  end
+end
+
+#melody
+in_thread do
+  sleep 32
+  use_synth :dsaw
+  2.times do
+    with_fx :wobble do
+      play_pattern_timed melody2, [3, 0.33, 0.33, 0.34, 4, 3, 0.33, 0.33, 0.34, 4], amp: 0.5, release: 1
+    end
+  end
+  sleep 16
+  2.times do
+    with_fx :wobble do
+      play_pattern_timed melodyOut, [3, 0.33, 0.33, 0.34, 4, 3, 0.33, 0.33, 0.34, 2, 2, 4], amp: 0.5, release: 1
+    end
+  end
+end
+
+#arpeggios
+in_thread do
+  use_synth :chipbass
+  5.times do
+    play_arpeggio chords1
+  end
+  2.times do
+    play_arpeggio chordsOut
+  end
+end
+
+#blow sound
+in_thread do
+  31.times do
+    sample :elec_filt_snare , rate: 0.2, amp: 2
+    sleep 4
+  end
+end
+
+#drums
+in_thread do
+  sleep 16
+  27.times do
+    sleep 1
+    sample :drum_snare_soft
+    sleep 1
+    sample :bd_ada
+    sleep 1
+    sample :drum_snare_soft
+    sleep 1
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>eleonora1.serra@mail.polimi.it; francesco2.bandera@mail.polimi.it; anna.impembo@mail.polimi.it</td>
+                <td>10/11/2024 16:25:01</td>
+                <td><button onclick="openModal(5)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/f810b8d33afffba40d28549e9e9490a31e3e51cbc9eac36a3b74c923452b5156_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal5" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(5)">×</span>
+                    <h2>Code for submission by eleonora1.serra@mail.polimi.it; francesco2.bandera@mail.polimi.it; anna.impembo@mail.polimi.it</h2>
+                    <pre>
+            #weird fishes arpeggi radiohead
+use_bpm 152
+set :vol, 0.8
+
+live_loop :closed_hats do
+  sample :drum_cymbal_closed, amp: (get :vol)*2/3, pan: rrand(-0.2, 0.2), sustain: 0.3, release: 0.2
+  sleep 0.25
+  sample :drum_cymbal_closed, amp: (get :vol)/4, pan: rrand(-0.35, 0.35), sustain: 0.3, release: 0.2
+  sleep 0.25
+  sample :drum_cymbal_closed , amp: (get :vol)/2, pan: rrand(-0.2, 0.2), sustain: 0.3, release: 0.2
+  sleep 0.5
+  sample :drum_cymbal_closed , amp: (get :vol)/2, pan: rrand(-0.3, 0.3), sustain: 0.3, release: 0.2
+  sleep 0.5
+  cue :snare
+  sample :drum_cymbal_closed , amp: (get :vol)/2, pan: rrand(-0.2, 0.2), sustain: 0.3, release: 0.2
+  sleep 0.5
+end
+
+live_loop :snare do
+  sync :snare
+  sample :drum_snare_hard, amp: (get :vol)/2.3, release: 0.3, sustain: 0.2
+  sleep 0.75
+  sample :drum_snare_hard, amp: (get :vol)/6, pan: rrand(-0.3, 0.3), release: 0.3, sustain: 0.2
+end
+
+live_loop :kick do
+  sample :drum_heavy_kick, amp: (get :vol)
+  sleep 0.5
+  sample :drum_heavy_kick, amp: (get :vol)*0.25
+  sleep 2.5
+  sample :drum_heavy_kick, amp: (get :vol)*0.75
+  sleep 1
+end
+
+live_loop :open_hats do
+  sleep 0.5
+  sample :drum_cymbal_open, amp: (get :vol)*0.075, pan: rrand(-0.3, 0.3), release: 0.5, sustain: 0.5
+  sleep 2
+  sample :drum_cymbal_open, amp: (get :vol)*0.05, pan: rrand(-0.5, 0.5), release: 0.5, sustain: 0.5
+  sleep 1.5
+end
+
+live_loop :cymbals do
+  sample :drum_splash_soft, amp: (get :vol)*0.5, release: 0.5, sustain: 0.75, pan: rrand(-0.3, 0.3)
+  sleep 31
+  sample :drum_splash_soft, amp: (get :vol)*0.3, release: 0.5, pan: rrand(-0.5, 0.5)
+  sleep 1
+end
+
+live_loop :snare_roll do
+  sleep 31
+  sample :drum_snare_hard, amp: (get :vol)/5, release: 0.3, sustain: 0.2, pan: -0.5
+  sleep 0.5
+  sample :drum_snare_hard, amp: (get :vol)/4, release: 0.3, sustain: 0.2, pan: 0.5
+  sleep 0.5
+end
+
+
+
+in_thread do
+  sleep 16
+  live_loop :arpeggi do
+    use_synth :piano
+    use_synth_defaults amp: 0.8
+    with_fx :reverb do
+      with_fx :tremolo do
+        8.times do
+          play_pattern_timed [:e4, :d5, :g4], [0.5, 0.5, 0.5]
+        end
+        play_pattern_timed [:d5, :g4], [0.5, 0.5]
+        play_pattern_timed [:fs4], [1]
+        8.times do
+          play_pattern_timed [:e5, :a4, :fs4], [0.5, 0.5, 0.5]
+        end
+        play_pattern_timed [:e5, :a4], [0.5, 0.5]
+        play_pattern_timed [:a4], [1]
+        4.times do
+          play_pattern_timed [:a5, :cs4, :a4], [0.5, 0.5, 0.5]
+        end
+        4.times do
+          play_pattern_timed [:g5, :cs4, :a4], [0.5, 0.5, 0.5]
+        end
+        play_pattern_timed [:a5, :cs4], [0.5, 0.5]
+        play_pattern_timed [:g4], [1]
+        8.times do
+          play_pattern_timed [:fs5, :b4, :g4], [0.5, 0.5, 0.5]
+        end
+        play_pattern_timed [:fs5, :b4], [0.5, 0.5]
+        play_pattern_timed [:e4], [1]
+      end
+    end
+  end
+end
+
+in_thread do
+  sleep 16
+  live_loop :bassline do
+    use_synth :bass_foundation
+    use_synth_defaults amp: 0.8
+    play_pattern_timed [:e2, :e2, :d3, :e3], [0.25, 0.5, 0.75, 0.5], sustain: 0.3
+    play_pattern_timed [:e3], [8], sustain: 0.3, release: 2
+    sleep 4
+    play_pattern_timed [:fs2], [12], sustain: 2, release: 2
+    sleep 2
+    play_pattern_timed [:a2], [12], sustain: 2, release: 2
+    sleep 2
+    play_pattern_timed [:e2, :fs2, :g2, :fs2, :b2], [0.5, 0.5, 0.5, 0.5, 0.5]
+    play_pattern_timed [:e3], [8]
+    sleep 3.5
+  end
+end
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>davide.baschieri@mail.polimi.it</td>
+                <td>10/11/2024 16:26:26</td>
+                <td><button onclick="openModal(6)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/63aed8b4e3947340ef3d4cfff9a5b3a9da733eda836c8ddbd57185f4628f722e_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal6" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(6)">×</span>
+                    <h2>Code for submission by davide.baschieri@mail.polimi.it</h2>
+                    <pre>
+            Emin = [:d4, :g3, :e3, :d4,:g3, :e3, :d4, :g3 ]
+FsMin = [:fs3,:e4, :a4, :fs3, :e4, :a4, :fs3, :e4 ]
+A = [:cs5, :a5, :a6, :cs5, :a5, :a6, :cs5, :a5]
+Em9 = [:fs5, :b5, :g4, :fs5, :b5, :g4, :fs5, :b5]
+cho=[Emin, FsMin, A, Em9]
+set :o,  1.5
+def drum
+  sample :bd_haus
+  sleep 0.5
+  sample :bd_zum
+  sleep 0.5
+  sample :hat_bdu
+  sleep 0.5
+  sample :hat_bdu
+  sample :bd_haus
+  sleep 0.25
+end
+
+def f1
+  Emin.each do |nota|
+    
+    play nota
+    sleep 0.5
+    
+    
+  end
+end
+def f2
+  FsMin.each do |nota|
+    
+    play nota
+    sleep 0.5
+    
+  end
+end
+def f3
+  A.each do |nota|
+    
+    play nota
+    sleep 0.5
+    
+  end
+  
+end
+def f4 (dur)
+  Em9.each do |nota|
+    
+    play nota
+    sleep dur
+  end
+end
+
+4.times do
+  f4 (get :o)
+  set :o, (get :o) - 0.25
+end
+set :o, 0.25
+4.times do
+  cue :durm
+  sample :bd_haus
+  f4( get :o)
+end
+
+sleep 1
+
+1.times do
+  f4(1)
+  
+end
+live_loop :melody do
+  use_synth :dpulse
+  4.times do
+    cue :drum
+    cue :init
+    f1
+  end
+  4.times do
+    cue :drum
+    cue :sec
+    f2
+  end
+  4.times do
+    cue :drum
+    cue :tri
+    f3
+  end
+  4.times do
+    cue :drum
+    cue :quad
+    f4(0.5)
+  end
+  stop
+end
+live_loop :drum do
+  sync :drum
+  10.times do
+    drum
+  end
+  
+end
+
+with_fx :reverb do
+  with_fx :level, amp: 1.7 do
+    
+    live_loop :down do
+      use_synth :hollow
+      sync :init
+      [:e4, :g4, :e4].each do |nota|
+        play nota ,release: 3, amp: 2.5 , attack_level: 3
+        sleep 1
+        
+      end
+    end
+    
+    live_loop :sos do
+      sync :sec
+      use_synth :hollow
+      [:e4, :a4, :e4].each do |nota|
+        play nota ,release: 3, amp: 2.5, attack_level: 3
+        sleep 1
+      end
+      
+    end
+    
+    live_loop :tre do
+      sync :tri
+      use_synth :hollow
+      
+      
+      [:cs4, :a4, :cs5].each do |nota|
+        play nota ,release: 3, amp: 2.5, attack_level: 3
+        sleep 1
+      end
+    end
+    live_loop :quad do
+      sync :quad
+      use_synth :hollow
+      
+      
+      [:fs3, :a4, :fs4].each do |nota|
+        play nota ,release: 3, amp: 2.5, attack_level: 3
+        sleep 1
+      end
+    end
+  end
+end
+with_fx :flanger , decay: 1  do
+  with_fx :eq , high: 1.2 do
+    with_fx :level, amp: 0.2 do
+      live_loop :bass do
+        use_synth :supersaw
+        
+        sync :init
+        play :e2, release: 7
+      end
+      live_loop :bass2 do
+        use_synth :supersaw
+        
+        sync :sec
+        play :fs2, release: 7
+      end
+      live_loop :bass3 do
+        use_synth :supersaw
+        
+        sync :tri
+        play :a2, release: 7
+      end
+      live_loop :bass4 do
+        use_synth :supersaw
+        
+        sync :quad
+        play :e2, release: 7
+      end
+    end
+  end
+end
+
+
+
+
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>pietro.callandrone@mail.polimi.it  alessandroantonio.lillo@mail.polimi.it</td>
+                <td>10/11/2024 16:27:27</td>
+                <td><button onclick="openModal(7)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/d3254cae320968d3c584504c9f385410e821bec88c047a19f8da89b737c9735a_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal7" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(7)">×</span>
+                    <h2>Code for submission by pietro.callandrone@mail.polimi.it  alessandroantonio.lillo@mail.polimi.it</h2>
+                    <pre>
+            $sleeptTime = 16
+$realeaseTime = 15
+
+use_bpm 153
+
+$hihat = :drum_cymbal_closed
+$kick = :bd_tek
+$snare = :sn_dolf
+$snare2 = :elec_hi_snare
+$snare3 = :sn_zome
+$rimshot = :sc808_clap
+$open_hat = :sc808_open_hihat
+
+
+define :kick do
+  sample $kick, amp: 2.5
+  sleep 0.5
+  sample $kick, amp: 2.5
+  sleep 7.5
+  sample $kick, amp: 2.5
+  sleep 8
+end
+
+define :snare2 do
+  with_fx :distortion, distort: 0.7 do
+    with_fx :lpf, cutoff: 50 do
+      sleep 1
+      sample $snare3, amp: 0.9
+      sleep 0.75
+      sample $snare3, amp: 0.5
+      sleep 1.25
+      sample $snare3, amp: 0.9
+      sleep 0.75
+      sample $snare3, amp: 0.5
+      sleep 1.25
+      sample $snare3, amp: 0.9
+      sleep 0.75
+      sample $snare3, amp: 0.5
+      sleep 1.25
+      sample $snare3, amp: 0.9
+      sleep 0.75
+      sample $snare3, amp: 0.5
+      sleep 0.25
+    end
+  end
+end
+
+define :toms do
+  sleep 62
+  sample :drum_tom_hi_hard
+  sleep 0.75
+  sample :drum_tom_mid_hard
+  sleep 0.75
+  sample :drum_tom_lo_hard
+  sleep 0.50
+end
+
+in_thread do
+  sleep 20
+  loop do
+    toms
+  end
+end
+
+define :crash do
+  with_fx :level, amp: 1.8 do
+    with_fx :reverb, room: 0.99  do
+      with_fx :echo, decay: 8, phase: 0.50, amp: 0.25 do
+        sample :hat_zan
+        sleep 16
+      end
+    end
+  end
+end
+
+define :snare do
+  with_fx :distortion, amp: 0.6, distort: 0.5 do
+    sleep 1
+    sample $snare, amp: 0.8
+    sample $snare2, amp: 0.9
+    sleep 0.75
+    sample $snare, amp: 0.3
+    sample $snare2, amp: 0.4
+    sleep 1.25
+    sample $snare, amp: 0.8
+    sample $snare2, amp: 0.9
+    sleep 0.75
+    sample $snare, amp: 0.3
+    sample $snare2, amp: 0.4
+    sleep 1.25
+    sample $snare, amp: 0.8
+    sample $snare2, amp: 0.9
+    sleep 0.75
+    sample $snare, amp: 0.3
+    sample $snare2, amp: 0.4
+    sleep 1.25
+    sample $snare, amp: 0.8
+    sample $snare2, amp: 0.9
+    sleep 0.75
+    sample $snare, amp: 0.3
+    sample $snare2, amp: 0.4
+    sleep 0.25
+  end
+end
+
+define :hithats do
+  8.times do
+    sample $hihat, amp: 0.65, pan: rand(-0.5..0)
+    sleep 0.5
+  end
+  8.times do
+    sample $hihat, amp: 0.65, pan: rand(0..0.5)
+    sleep 0.5
+  end
+end
+
+define :play_second_hat do |amp, sleep_times|
+  sleep sleep_times[:initial_sleep]
+  sleep_times[:hats].each do |time|
+    sample $hihat, amp: amp
+    sleep time
+  end
+end
+
+define :bass do
+  use_synth :bass_foundation
+  
+  define :play_bass do |note, times, amp|
+    times.times do
+      play note, amp: amp
+      sleep 0.5
+      play note, amp: amp
+      sleep 2.5
+    end
+    play note, amp: amp
+    sleep 0.5
+    play note, amp: amp
+    sleep 1.5
+  end
+  play_bass(:e1, 2, 1.75)
+  play_bass(:e1, 2, 1.25)
+  play_bass(:fs1, 2, 1.75)
+  play_bass(:fs1, 2, 1.25)
+  play_bass(:a1, 2, 1.75)
+  play_bass(:a1, 2, 1.25)
+  play_bass(:g1, 2, 1.75)
+  play_bass(:g1, 2, 1.25)
+end
+
+
+define :secondhat do
+  play_second_hat(0.35, { initial_sleep: 1.5, hats: [0.25, 0.25, 2] })
+end
+
+
+chords = [ chord(:e, :minor7), chord(:d, :major) + [:e3], chord(:a, :major), chord(:g, :dom7)]
+
+define :pad_chords do
+  play chord(:e, :m7), amp: 1.3, attack: 3, release: $realeaseTime, pan: -0.15
+  sleep $sleeptTime
+  play chord(:Fs3, :m7) , amp: 1.3, attack: 3, release: $realeaseTime, pan: -0.15
+  sleep $sleeptTime
+  play chord(:a, :major), amp: 1.3, attack: 3, release: $realeaseTime, pan: -0.15
+  sleep $sleeptTime
+  play [:g3, :b3, :d4, :fs4], amp: 1.3, attack: 3, release: $realeaseTime, pan: -0.15
+  sleep $sleeptTime
+end
+
+define :arpeggiate_chord do |chord|
+  chord.each do |note|
+    play note, amp: 2, attack: 0.5, release: 1, pan: 0.20
+    sleep 0.5
+  end
+end
+
+define :arp_synth do
+  arpeggiate_chord(chord(:b, :minor7))
+  sleep 0.5
+  arpeggiate_chord(chord(:d, '9'))
+  sleep 0.5
+  arpeggiate_chord(chord(:a, :major))
+  sleep 0.5
+  arpeggiate_chord(chord(:g, '7'))
+  sleep 0.5
+end
+
+in_thread do
+  sleep 20
+  loop do
+    use_synth :bass_foundation
+    with_fx :reverb, pre_amp: 1 do
+      pad_chords
+    end
+  end
+end
+
+
+in_thread do
+  sleep 84
+  loop do
+    with_fx :level, amp: 0.4 do
+      with_fx :echo, decay: 0.25 do
+        with_fx :reverb, amp: 0.75 do
+          with_fx :hpf, cutoff: 35 do
+            use_synth :mod_beep
+            16.times do
+              with_fx :reverb do
+                pad_chords
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
+
+in_thread do
+  sleep 20
+  loop do
+    with_fx :distortion, mix: 0.5, distort: 0.6 do
+      bass
+    end
+  end
+end
+
+in_thread do
+  sleep 84
+  loop do
+    with_fx :echo, decay: 0.75 do
+      with_fx :reverb, amp: 0.3 do
+        sample :guit_em9, amp: 1.6, pan: 0.15
+        sleep 16
+        sample :guit_em9, amp: 1.6, pitch: 7, pan: -0.10
+        sleep 16
+        sample :guit_em9, amp: 1.6, pitch: 5, pan: 0.20
+        sleep 16
+        sample :guit_em9, amp: 1.6, pitch: 5, pan: -0.15
+      end
+    end
+  end
+end
+
+
+
+in_thread do
+  sleep 4
+  loop do
+    crash
+  end
+end
+
+in_thread do
+  sleep 4
+  loop do
+    secondhat
+  end
+end
+
+in_thread do
+  sleep 4
+  loop do
+    kick
+  end
+end
+
+in_thread do
+  sleep 4
+  loop do
+    snare
+  end
+end
+in_thread do
+  sleep 4
+  loop do
+    snare2
+  end
+end
+
+in_thread do
+  sleep 4
+  loop do
+    hithats
+  end
+end
+
+define :starter do
+  sample $hihat
+  sleep 1
+  sample $hihat
+  sleep 1
+  sample $hihat
+  sleep 1
+  sample $hihat
+  sleep 1
+end
+
+in_thread do
+  starter
+end
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>sara.scarmozzino@mail.polimi.it</td>
+                <td>10/11/2024 16:27:30</td>
+                <td><button onclick="openModal(8)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/e634bf85a37dbcc7dc0b4ed2562db2e35d45f2f3f73b21f52e9382b9272d7f3b_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal8" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(8)">×</span>
+                    <h2>Code for submission by sara.scarmozzino@mail.polimi.it</h2>
+                    <pre>
+            def play_seq1(seq)
+  seq.each do |n|
+    play n[0], amp: 5
+    sleep n[1]
+  end
+end
+
+def play_seq(seq)
+  seq.each do |n|
+    play n[0]
+    sleep n[1]
+  end
+end
+
+a1=[ :d5, :g4, :e4].map {|x| [x,0.25]}
+a2=[ :e5, :a4, 66].map {|x| [x,0.25]}
+a3=[ :a5, 73, :a4].map {|x| [x,0.25]}
+a4=[ 78, :b4, :g4].map {|x| [x,0.25]}
+
+b1=[ :g5, :e5, :d5, :g5, :d5].map {|x| [x, 0.25]}
+b2=[ :g4, :d5, :e5, :g4, :d5].map {|x| [x, 0.25]}
+b3=[ :a4, :e5, 78, :a4, :e5].map {|x| [x, 0.25]}
+b4=[ 73, :e5, :a5, 73, :e5].map {|x| [x, 0.25]}
+
+in_thread do
+  sleep 16
+  loop do
+    use_synth :dark_ambience
+    10.times do
+      play_seq1 a1
+    end
+    11.times do
+      play_seq1 a2
+    end
+    11.times do
+      play_seq1 a3
+    end
+    10.times do
+      play_seq1 a4
+    end
+  end
+end
+
+in_thread do
+  sleep 32
+  loop do
+    use_synth :blade
+    6.times do
+      play_seq b1
+    end
+    play :g5
+    sleep 0.25
+    play :d5
+    sleep 0.25
+    6.times do
+      play_seq b2
+    end
+    play :g4
+    sleep 0.25
+    play :d5
+    sleep 0.25
+    6.times do
+      play_seq b3
+    end
+    play :a4
+    sleep 0.25
+    play :e5
+    sleep 0.25
+    6.times do
+      play_seq b4
+    end
+    play 73
+    sleep 0.25
+    play :e5
+    sleep 0.25
+  end
+end
+
+in_thread do
+  loop do
+    cue :bass
+    use_synth :bass_highend
+    play :E2, amp: 0.5, release: 1
+    sleep 1
+    play :D2, amp: 0.5, release: 1
+    sleep 1
+    play :a2, amp: 0.5, release: 1
+    sleep 1
+    play :b2, amp: 0.5, release: 1
+    sleep 1
+  end
+end
+
+in_thread do
+  sleep 32
+  loop do
+    sample :ambi_choir, release: 4, amp: 3
+    sleep 4
+    sample :ambi_choir, release: 4, amp: 3, pitch: -2
+    sleep 4
+    sample :ambi_choir, release: 4, amp: 3, pitch: 5
+    sleep 4
+    sample :ambi_choir, release: 4, amp: 3, pitch: 7
+    sleep 4
+  end
+end
+
+in_thread do
+  sleep 8
+  loop do
+    2.times do
+      sample :drum_cymbal_closed, release: 0.1
+      sleep 0.25
+    end
+    sleep 0.25
+    sample :drum_cymbal_closed, release: 0.1
+    sleep 0.25
+  end
+end
+
+in_thread do
+  sleep 4
+  loop do
+    sync :bass
+    use_synth :bass_foundation
+    play :e2
+    sleep 0.25
+  end
+end
+
+in_thread do
+  sleep 16
+  loop do
+    sleep 0.25
+    sample :drum_tom_mid_hard, release: 0.1
+    sleep 0.25
+    sample :drum_tom_mid_hard, release: 0.1
+    sleep 0.75
+    sample :drum_tom_mid_hard, release: 0.1
+  end
+end
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>alessandro.catalano@mail.polimi.it, paolo1.stella@mail.polimi.it, riccardo.tocci@mail.polimi.it</td>
+                <td>10/11/2024 16:27:48</td>
+                <td><button onclick="openModal(9)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/bb0e35cfd6257bc08f07d9652b62cef7f62a285f3527d71d8e40c618dc471dc1_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal9" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(9)">×</span>
+                    <h2>Code for submission by alessandro.catalano@mail.polimi.it, paolo1.stella@mail.polimi.it, riccardo.tocci@mail.polimi.it</h2>
+                    <pre>
+            #weird fishes
+
+use_bpm 150
+
+fb1 = [:d6,:g5,:e5]. map do |x| [x, 0.5] end
+fb2 = [:e6,:a5,:fs5]. map do |x| [x, 0.5] end
+fb3 = [:a6,:cs6,:a5]. map do |x| [x, 0.5] end
+fb4 = [:fs6,:b5,:g5]. map do |x| [x, 0.5] end
+
+$a1 = [:e6,:g6,:d6,:e6,:g6]. map do |x| [x, 0.5] end
+$a2 = [:e6,:d6,:b5,:e6,:d6]. map do |x| [x, 0.5] end
+$a3 = [:e6,:e6,:cs6,:e6,:e6]. map do |x| [x, 0.5] end
+$a4 = [:e6,:a6,:e6,:e6,:a6]. map do |x| [x, 0.5] end
+
+$b1 = [:e6,:g6,:b6,:e6,:g6]. map do |x| [x, 0.5] end
+$b2 = [:fs6,:a6,:cs7,:fs6,:a6]. map do |x| [x, 0.5] end
+$b3 = [:g6,:b6,:d7,:g6,:b6]. map do |x| [x, 0.5] end
+
+set :b, 0.5
+
+in_thread do
+  loop do
+    cue :drum
+    sample :drum_heavy_kick
+    sleep (get :b)
+    sample :hat_cab
+    sleep (get :b)/2
+    sample :hat_bdu
+    sleep (get :b)/2
+  end
+end
+
+
+in_thread do
+  loop do
+    sync :drum
+    sample :drum_snare_soft
+    sleep 0.5
+    sample :drum_snare_soft, amp: 0.8
+    sleep ((get :b)*2 - 0.5)
+  end
+end
+
+
+in_thread do
+  sync :drum
+  loop do
+    sample :drum_cymbal_soft, amp: 0.5
+    sleep (get :b)*4
+  end
+end
+
+
+in_thread do
+  use_synth :bass_foundation
+  sync :base
+  with_fx :lpf do
+    loop do
+      play (64 - 36)
+      sleep 0.5
+      play (64 - 36)
+      sleep 0.5
+      play (64 + 3 - 36)
+      sleep 1
+      play (62 - 24 )
+      sleep 1
+      play (62 - 24 +2)
+      sleep 1+(4*3)
+      
+      
+      play (64 - 36 + 2)
+      sleep 16
+      
+      
+      play (64 - 36 + 5)
+      sleep 15
+      play (64 -36 + 2)
+      sleep 0.5
+      play (64 -36 + 2)
+      sleep 0.5
+      
+      
+      play (64 - 36 + 3)
+      sleep 1
+      play (64 -36 + 2)
+      sleep 1
+      play (64 - 36)
+      sleep 1
+      play  (62 -24 + 2)
+      sleep 1+ 4*3
+    end
+  end
+end
+
+
+def play_seq(seq)
+  seq.each do |n|
+    play n[0]
+    sleep n[1]
+  end
+end
+
+in_thread do
+  sleep 5
+  loop do
+    sync :drum
+    cue :base
+    with_fx :slicer do
+      with_fx :ping_pong, mix: 0.5 do
+        use_synth :piano
+        play_seq fb1*10
+        play_seq fb2*11
+        play_seq fb3*11
+        play_seq fb4*10
+        play :d6
+        sleep get :b
+        play :g5
+        sleep get :b
+      end
+    end
+  end
+end
+
+
+def second_g
+  play_seq $a1*6
+  play_seq $a2*6
+  play_seq $a3*7
+  play_seq $a4*6
+  play :a6
+  sleep get :b
+end
+
+
+def third_g
+  play_seq $b1*6
+  play_seq $b2*13
+  play_seq $b3*6
+  play :g6
+  sleep get :b
+end
+
+
+in_thread do
+  sleep 64 + 5
+  3.times do
+    with_fx :reverb do
+      use_synth :pluck
+      second_g
+    end
+  end
+end
+
+in_thread do
+  sleep 128 + 5
+  2.times do
+    with_fx :reverb do
+      use_synth :bass_foundation
+      third_g
+    end
+  end
+end
+
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>davide.mazzei@mail.polimi.it</td>
+                <td>10/11/2024 16:29:23</td>
+                <td><button onclick="openModal(10)">View Code</button></td>
+                <td>
+            Recording not found.</td></tr>
+            <div id="modal10" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(10)">×</span>
+                    <h2>Code for submission by davide.mazzei@mail.polimi.it</h2>
+                    <pre>
+            Unable to decode file content. The file may contain non-UTF-8 characters.
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>matteo.digiovanni@mail.polimi.it, francesco.crociani@mail.polimi.it, andrea.antognetti@mail.polimi.it</td>
+                <td>10/11/2024 16:29:23</td>
+                <td><button onclick="openModal(11)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/72ce7fa714aa7344491dc1fa0eb4bafa0f93d64b79d29af7c84af4da7c59947f_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal11" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(11)">×</span>
+                    <h2>Code for submission by matteo.digiovanni@mail.polimi.it, francesco.crociani@mail.polimi.it, andrea.antognetti@mail.polimi.it</h2>
+                    <pre>
+            use_bpm 153
+
+arpeggio1 = ([:d5,:g4,:e4].map {|x| [x,0.5,5]})*10
+arpeggio2 = ([:e5,:a4,:fs4].map {|x| [x,0.5,5]})*11
+arpeggio3 = ([:a5,:cs4,:a4].map {|x| [x,0.5,5]})*11
+arpeggio4 = ([:g5,:b4,:g4].map {|x| [x,0.5,5]})*10 + ([:d5,:g4].map {|x| [x,0.5,5]})
+
+arpeggio_pan1 = (([:e5, :g5, :e5].map {|x| [x,0.5,4,1]}) + ([:g5, :d5].map {|x| [x,0.5,4,1]}))*6 + ([:e5, :a5].map {|x| [x,0.5,4,1]})
+arpeggio_pan2 = (([:e5, :d5, :b4].map {|x| [x,0.5,4,1]})+([:e5,:d5].map {|x| [x,0.5,4,1]}))*6
+arpeggio_pan3 = (([:e5, :e5, :cs5].map {|x| [x,0.5,4,1]})+([:e5, :e5].map {|x| [x,0.5,4,1]}))*6 + ([:e5, :e5, :cs5].map {|x| [x,0.5,4,1]})
+arpeggio_pan4 = (([:e5, :a5].map {|x| [x,0.5,4,1]})+([:e5, :a5, :e5].map {|x| [x,0.5,4,1]}))*6
+
+$voce1 = ([[:d5,1,1 ],[:d5,0.5,0.5],[:d5,1,1],[:d5,1,1],[:d5,1,1],[:d5,11,1]])
+$voce2 = ([[:b4,0.5,0.3],[:d5,1.5,1],[:d5,1,1],[:d5,0.5,0.5],[:d5,11,1]])
+$voce3 = ([[:d5,1,1],[:cs5,15,1]])
+$voce4 = ([[:b4,1,1],[:d5,2,1],[:d5,15,1]])
+
+# Funzione play sequenza
+def play_seq(seq)
+  seq.each do |n|
+    play n[0], amp: n[2], pan: n[3]
+    sleep n[1]
+  end
+end
+
+# Funzione suona arpeggio
+define :arpeggios do
+  use_synth :dark_ambience
+  play_seq arpeggio1
+  play_seq arpeggio2
+  play_seq arpeggio3
+  play_seq arpeggio4
+end
+
+define :panned_arp do
+  use_synth :dark_ambience
+  play_seq arpeggio_pan1
+  play_seq arpeggio_pan2
+  play_seq arpeggio_pan3
+  play_seq arpeggio_pan4
+end
+
+# Topline
+def topline
+  with_fx :reverb, mix: 0.8 do
+    use_synth :chiplead
+    play_seq($voce1)
+    play_seq($voce2)
+    play_seq($voce3)
+    play_seq($voce4)
+  end
+end
+
+# Funzione suona accordi
+def chords
+  use_synth :organ_tonewheel
+  with_fx :reverb, mix: 0.5 ,room: 0.5 do
+    play chord(:e4, :m7),attack: 4, sustain: 4, release: 12
+    sleep 16
+    play chord(:fs4, :m7),attack: 4, sustain: 4,release: 12
+    sleep 16
+    play chord(:a4, :M), attack: 4, sustain: 4, release: 12
+    sleep 16
+    play chord(:g4, :M7) , attack: 4, sustain: 4, release: 12
+    sleep 16
+  end
+end
+
+def chords2
+  use_synth :rhodey
+  with_fx :echo, decay: 4, phase: 2 do
+    play chord(:e4, :m7),attack: 4, sustain: 4, release: 12, amp: 0.2
+    sleep 16
+    play chord(:fs4, :m7),attack: 4, sustain: 4,release: 12, amp: 0.2
+    sleep 16
+    play chord(:a4, :M), attack: 4, sustain: 4, release: 12, amp: 0.2
+    sleep 16
+    play chord(:g4, :M7) , attack: 4, sustain: 4, release: 12, amp: 0.2
+    sleep 16
+  end
+end
+
+# Bass
+def bass
+  use_synth :bass_foundation
+  play :e1, sustain: 0.8, amp: 0.5
+  sleep 1
+  play :a1, sustain: 0.8, amp: 0.5
+  sleep 1
+  play :d2, sustain: 0.8, amp: 0.5
+  sleep 1
+  play :e2 , sustain: 13, amp: 0.5
+  sleep 12
+  play :fs2, attack: 5, sustain: 12, amp: 0.5
+  sleep 17
+  play :a1 , sustain: 15, amp: 0.5
+  sleep 15
+  play :e2 , sustain: 0.3, amp: 0.3
+  sleep 0.5
+  play :fs2 , sustain: 0.3, amp: 0.5
+  sleep 0.5
+  play :g2 ,  sustain: 0.8,  amp: 0.4
+  sleep 1
+  play :fs2 ,  sustain: 0.8,  amp: 0.3
+  sleep 1
+  play :d2, sustain: 0.3, amp: 0.4
+  sleep 1
+  play :e2, sustain: 13.5, amp: 0.5
+  sleep 13
+end
+
+# Batteria
+def hihat
+  16.times do
+    sample :hat_star
+    sleep 0.5
+    sample :hat_star, amp: 0.5
+    sleep 0.5
+  end
+end
+
+def snare
+  with_fx :reverb, room: 0.4 do
+    8.times do
+      sleep 1
+      sample:elec_hi_snare, amp: rrand(0.6,1)
+      sleep 0.75
+      sample:elec_hi_snare, amp: rrand(0.2,0.4)
+      sleep 0.25
+    end
+  end
+end
+
+def kick
+  sample :drum_heavy_kick
+  sleep 0.5
+  sample :drum_heavy_kick
+  sleep 7.5
+  sample :drum_heavy_kick
+  sleep 8
+end
+
+# Funzione batteria
+def batteria
+  in_thread do
+    hihat
+  end
+  in_thread do
+    snare
+  end
+  in_thread do
+    kick
+  end
+end
+
+# Intro
+def intro
+  4.times do
+    sample :elec_pop
+    sleep 1
+  end
+end
+
+# Chiamo la intro
+intro
+
+sample :vinyl_hiss
+batteria
+sleep 16
+
+# Parte la band
+in_thread do
+  8.times do
+    batteria
+    sleep 16
+  end
+end
+
+in_thread do
+  2.times do
+    arpeggios
+  end
+end
+
+in_thread do
+  2.times do
+    chords
+  end
+end
+
+in_thread do
+  sleep 48
+  panned_arp
+end
+
+in_thread do
+  2.times do
+    bass
+  end
+end
+
+in_thread do
+  sleep 64
+  topline
+end
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>thomas.guffroy@mail.polimi.it</td>
+                <td>10/11/2024 16:29:28</td>
+                <td><button onclick="openModal(12)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/ed01b7c052907c52484be8bbe7df1afa6c34408287c0201f1a273f6b9f15d08e_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal12" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(12)">×</span>
+                    <h2>Code for submission by thomas.guffroy@mail.polimi.it</h2>
+                    <pre>
+            #BPM
+$bpm = 60.0/150.0
+$bar_count = 0
+
+
+#Create bars and beats signals
+in_thread do
+  loop do
+    cue :bar
+    $bar_count += 1
+    4.times do
+      cue :beat
+      sleep $bpm
+    end
+  end
+end
+
+#Cymbals
+in_thread do
+  with_fx :reverb do
+    loop do
+      sync :beat
+      sample :drum_cymbal_closed
+    end
+  end
+end
+
+
+#Kick & snare
+in_thread do
+  with_fx :reverb do
+    loop do
+      sync :bar
+      sample :drum_heavy_kick
+      sleep $bpm
+      sample :drum_snare_hard
+      sleep $bpm*3.0/4.0
+      sample :drum_snare_soft
+      sleep $bpm/2.0
+      sample :drum_snare_soft
+      sleep $bpm/4.0
+      sample :drum_heavy_kick
+      sleep $bpm/2.0
+      sample :drum_snare_hard
+    end
+  end
+end
+
+
+#Melody variation
+in_thread do
+  sync :bar
+  loop do
+    $seq = [:d5, :g4, :e4]
+    $chord1 = [:e4, :g4, :b4]
+    sleep $bpm*4*4
+    $seq = [:e5, :a4, :fs4]
+    $chord1 = [:e4, :g4, :a4]
+    sleep $bpm*4*4
+  end
+end
+
+
+#Main arp
+live_loop :arp do
+  sync :bar
+  if $bar_count >= 8
+    use_synth :piano
+    with_fx :reverb do
+      loop do
+        $seq.each do |nota|
+          play nota, amp: 0.5, release: 0.8
+          sleep $bpm/2.0
+        end
+      end
+    end
+  end
+end
+
+
+
+
+#Bass
+in_thread do
+  loop do
+    sync :bar
+    if $bar_count >= 4
+      7.times do
+        use_synth :bass_foundation
+        play :e1, attack: 0, release: 0.3
+        sleep $bpm/2.0
+      end
+      play :e1, attack: 0, release: 0.3
+    end
+  end
+end
+
+
+#Pad
+in_thread do
+  loop do
+    sync :bar
+    if $bar_count >= 16
+      use_synth :saw
+      $chord1.each do |nota|
+        with_fx :flanger do
+          play nota, attack: 1, release: 2, amp: 0.2
+        end
+        sleep $bpm
+      end
+    end
+  end
+end
+
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>umut.ozer@mail.polimi.it</td>
+                <td>10/11/2024 16:30:05</td>
+                <td><button onclick="openModal(13)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/e43131f9358b81b81def4fa683cb2cb0227f8c33aecc596e08feee3c2c9c8b15_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal13" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(13)">×</span>
+                    <h2>Code for submission by umut.ozer@mail.polimi.it</h2>
+                    <pre>
+            use_bpm 150
+
+live_loop :drumsbass do
+  sample :drum_heavy_kick
+  sleep 0.5
+  sample :drum_heavy_kick
+  sleep 7.5
+end
+
+live_loop :drums2 do
+  sleep 1
+  sample :drum_snare_hard, amp: 0.5
+  sleep 0.75
+  sample :drum_snare_hard, amp: 0.5
+  sleep 0.25
+end
+
+live_loop :drums3 do
+  sample :drum_cymbal_closed, amp: 0.4
+  sleep 0.5
+  sample :drum_cymbal_closed, amp: 0.4
+  sleep 0.5
+  sample :drum_cymbal_closed, amp: 1
+  sleep 0.5
+  sample :drum_cymbal_closed, amp: 0.4
+  sleep 0.5
+end
+
+live_loop :arpeggio do
+  
+  10.times do
+    use_synth :piano
+    play :d4, decay: 0.5
+    sleep 0.5
+    play :g3, decay: 0.5
+    sleep 0.5
+    play :e3, decay: 0.5
+    sleep 0.5
+  end
+  cue :tick
+  sync :bitir1
+end
+
+live_loop :arpeggio2 do
+  sync :tick
+  11. times do
+    use_synth :piano
+    play :e5, decay: 0.25
+    sleep 0.5
+    play :a4, decay: 0.25
+    sleep 0.5
+    play :fs4, decay: 0.25
+    sleep 0.5
+  end
+  cue :baslat2
+  cue :bitir2
+end
+
+live_loop :arpeggio3 do
+  sync :baslat2
+  11. times do
+    use_synth :piano
+    play :a5, decay: 0.25
+    sleep 0.5
+    play :cs5, decay: 0.25
+    sleep 0.5
+    play :a4, decay: 0.25
+    sleep 0.5
+  end
+  cue :baslat3
+  sync :bitir2
+end
+
+live_loop :arpeggio4 do
+  sync :baslat3
+  11. times do
+    use_synth :piano
+    play :fs5, decay: 0.25
+    sleep 0.5
+    play :b4, decay: 0.25
+    sleep 0.5
+    play :g4, decay: 0.25
+    sleep 0.5
+  end
+  cue :bitir1
+end
+
+live_loop :bass do
+  use_synth :organ_tonewheel
+  play 40
+  sleep 0.5
+  play 40
+  sleep 0.5
+  play 43
+  sleep 1
+  play 50
+  sleep 1
+  play 52, decay: 13, decay_level: 0.25
+  sleep 13
+end
+
+chords = [(chord :E, :minor7), (chord :Fs, :minor7), (chord :A, :major), (chord :G, :major7)].ring
+c = chords[0]
+
+live_loop :akor do
+  use_synth :blade
+  r = [0.25,0.25,0.25,0.25].choose
+  play c.choose, amp: 0.6, release: r
+  sleep r
+end
+
+live_loop :akor2 do
+  use_synth :hoover
+  r = [0.25,0.25,0.25,0.25].choose
+  play c.choose, amp: 0.5, release: r
+  sleep r
+end
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>alindaezgi.gercek@mail.polimi.it</td>
+                <td>10/11/2024 16:30:06</td>
+                <td><button onclick="openModal(14)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/29292dbf26405a2ee5d7c68fec02a4e5f4840fb3d825d91a4bf1bfdea0409605_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal14" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(14)">×</span>
+                    <h2>Code for submission by alindaezgi.gercek@mail.polimi.it</h2>
+                    <pre>
+            use_bpm 150
+
+
+p1 = (([:g4,:c4,:a3].map {|x| [x,0.5]}))*10
+
+p2 = (([:a4,:d4,:b3].map {|x| [x,0.5]}))*10
+
+p3 = (([:d5,:fs4,:d4].map {|x| [x,0.5]}))*10
+
+p4 = (([:b4,:e4,:c4].map {|x| [x,0.5]}))*10
+
+p = p1 + p2 + p3 + p4
+
+def play_seq(seq)
+  amplitude = 0.2
+  seq.each do |n|
+    play n[0], amp: amplitude, release: 2
+    sleep n[1]
+    amplitude += 0.05
+    amplitude = [amplitude, 1.0].min
+  end
+end
+
+live_loop :song do
+  sample :piano_soft
+  play_seq(p)
+  sleep 8
+end
+
+live_loop :drums1 do
+  sample :drum_heavy_kick
+  sleep 0.5
+  sample :drum_heavy_kick
+  sleep 7.5
+end
+
+live_loop :drums2 do
+  sleep 1
+  sample :drum_snare_soft, release: 2, sustain: 0.5
+  sleep 0.75
+  sample :drum_snare_soft, release: 2, sustain: 0.5
+  sleep 0.25
+end
+
+live_loop :drums3 do
+  sample :drum_cymbal_closed
+  sleep 0.5
+end
+
+live_loop :cinematic do
+  
+  with_fx :distortion do
+    sample :hollow, amp: 0.3, release: 4
+    play :c2, amp: 0.5, release: 2
+  end
+  
+  with_fx :reverb, mix: 0.3 do
+    play_seq(p1 + p2)
+  end
+  
+  with_fx :echo, mix: 0.3, phase: 0.3, decay: 1.5 do
+    play_seq(p3 + p4)
+  end
+  
+  sleep 0.5
+  
+  with_fx :gverb, mix: 0.4 do
+    sample :ambi_haunted_hum, amp: 0.3, rate: 0.5
+    sleep 5
+  end
+  
+  sleep 5
+  
+end
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>mario.aucelli@mail.polimi.it luca@</td>
+                <td>10/11/2024 16:30:36</td>
+                <td><button onclick="openModal(15)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/ba98ae657dba25afa336bf30f095fa997241129f5cd300ab5cbcabda5e370dd7_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal15" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(15)">×</span>
+                    <h2>Code for submission by mario.aucelli@mail.polimi.it luca@</h2>
+                    <pre>
+            use_bpm 150
+
+#first part: intro tapping, 24 times drum loop, with splash
+#pause: no drums
+#second part:
+
+
+
+
+#INTRO TAPPING
+4.times do
+  sample :perc_snap
+  sleep 1
+end
+
+
+
+##############################################################
+#DRUMS
+
+
+define :drum1 do
+  
+  #Kick
+  in_thread do
+    sample :drum_heavy_kick
+    sleep 0.5
+    sample :drum_heavy_kick,amp: 0.9
+    sleep 7.5
+    sample :drum_heavy_kick
+    sleep 8
+    
+  end
+  
+  
+  #hihats
+  in_thread do
+    8.times do
+      sample :drum_cymbal_pedal, amp: 1, pan: -0.2
+      sleep 0.50
+      sample :drum_cymbal_pedal, amp: 1-rand()/2, pan: 0.2
+      sleep 0.50
+      cue :hihat_snare
+      sample :drum_cymbal_pedal, amp: 1-rand()/2, pan: 0.2
+      sleep 0.50
+      sample :drum_cymbal_pedal, amp: 1-rand()/2, pan: 0.2
+      sleep 0.50
+    end
+  end
+  
+  
+  #snare
+  in_thread do
+    8.times do
+      sync :hihat_snare
+      sample :drum_snare_hard
+      sleep 0.75
+      sample :drum_snare_soft, amp: 1
+      sleep 0.25+1
+    end
+  end
+  
+  
+  #new elements
+  in_thread do
+    sleep 7.5
+    sample :perc_door,amp: 0.5, pan:1
+  end
+  
+  in_thread do
+    sample choose([:ambi_dark_woosh,:ambi_swoosh]), pan: choose([-1,+1]), amp: 0.2
+  end
+  
+end
+
+
+2.times do
+  drum1
+  sleep 16
+end
+
+in_thread do
+  8.times do
+    drum1
+    in_thread do
+      #loop do
+      sample :drum_splash_soft
+      sleep 16
+      #end
+    end
+    sleep 16
+  end
+end
+
+
+##############################ARPEGGI##############################
+
+use_synth :pluck
+in_thread do
+  with_fx :reverb do
+    arp([:d4, :g3, :e3,:d4, :g3, :e3,:d4, :g3, :e3,:d4, :g3, :e3,:d4, :g3, :e3, :d4, :g3], 2)
+    
+    arp([:e4, :a3, :g3, :e4, :a3, :g3, :e4, :a3, :g3, :e4, :a3, :g3, :e4, :a3, :g3, :e4, :a3], 2)
+    
+    arp([:a4, :cs4, :a3, :a4, :cs4, :a3, :a4, :cs4, :a3, :a4, :cs4, :a3, :a4, :cs4, :a3, :a4, :cs4], 2)
+    
+    cue :arp2
+    arp([:fs4, :b3, :g3, :fs4, :b3, :g3, :fs4, :b3, :g3, :fs4, :b3, :g3, :fs4, :b3, :g3, :fs4, :b3], 2)
+    
+    arp([:d4, :g3, :e3,:d4, :g3, :e3,:d4, :g3, :e3,:d4, :g3, :e3,:d4, :g3, :e3, :d4, :g3], 2)
+    
+    arp([:e4, :a3, :g3, :e4, :a3, :g3, :e4, :a3, :g3, :e4, :a3, :g3, :e4, :a3, :g3, :e4, :a3], 2)
+    
+    arp([:a4, :cs4, :a3, :a4, :cs4, :a3, :a4, :cs4, :a3, :a4, :cs4, :a3, :a4, :cs4, :a3, :a4, :cs4], 2)
+    
+    arp([:fs4, :b3, :g3, :fs4, :b3, :g3, :fs4, :b3, :g3, :fs4, :b3, :g3, :fs4, :b3, :g3, :fs4, :b3], 2)
+  end
+end
+
+in_thread do
+  with_fx :reverb do
+    sync :arp2
+    arp([:d4, :g4, :e4, :g4, :e4, :d4, :g4, :e4, :g4, :e4, :d4, :g4, :e4, :g4, :e4, :d4], 2)
+    
+    arp([:g3, :d4, :e4, :d4, :e4, :g3, :d4, :e4, :d4, :e4, :g3, :d4, :e4, :d4, :e4, :g3], 2)
+    
+    arp([:a3, :e4, :fs4, :e4, :fs4, :a3, :e4, :fs4, :e4, :fs4, :a3, :e4, :fs4, :e4, :fs4, :a3], 2)
+    
+    arp([:cs4, :e4, :a4, :e4, :a4, :cs4, :e4, :a4, :e4, :a4, :cs4, :e4, :a4, :e4, :a4, :cs4], 2)
+    
+    arp([:d4, :g4, :e4, :g4, :e4, :d4, :g4, :e4, :g4, :e4, :d4, :g4, :e4, :g4, :e4, :g4], 2)
+  end
+end
+
+
+use_synth :bass_foundation
+in_thread do
+  2.times do
+    play :e1, sustain: 0.7
+    sleep 0.5
+    play :e1, sustain: 0.7
+    sleep 0.5
+    play :g1, sustain: 0.7
+    sleep 1
+    play :d2, sustain: 0.7
+    sleep 1
+    play :e2, sustain: 3, sustain_level: 0.6, release: 3
+    sleep 13
+    
+    play :fs1, sustain: 3, sustain_level: 0.6, release: 3
+    sleep 16
+    
+    play :a1, sustain: 3, sustain_level: 0.6, release: 3
+    sleep 16
+    
+    play :fs1, sustain: 0.7
+    sleep 0.5
+    play :fs1, sustain: 0.7
+    sleep 0.5
+    play :g1, sustain: 1
+    sleep 1
+    play :fs1, sustain: 1
+    sleep 1
+    play :e1, sustain: 1
+    sleep 1
+    play :e2, sustain: 3, sustain_level: 0.6, release: 3
+    sleep 13
+  end
+end
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>giacomo1.detoni@mail.polimi.it       andrea.crisafulli@mail.polimi.it      marco.porcella@mail.polimi.it       filippo1.longhi@mail.polimi.it</td>
+                <td>10/11/2024 16:31:22</td>
+                <td><button onclick="openModal(18)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/d83e28d24d7c308230f48af1f2dfbb7d2261849481a0727839cbc62ead96ef7f_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal18" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(18)">×</span>
+                    <h2>Code for submission by giacomo1.detoni@mail.polimi.it       andrea.crisafulli@mail.polimi.it      marco.porcella@mail.polimi.it       filippo1.longhi@mail.polimi.it</h2>
+                    <pre>
+            # Weird Fishes / Arpeggi
+
+# Marco Porcella
+# Giacomo De Toni
+# Filippo Longhi
+# Andrea Crisafulli
+
+set_link_bpm! 77 # Sets BPM to correct value for the song
+
+
+arp1 = [:D4,:G3,:E3] #10 volte
+arp2 = [:E4,:A3,:Fs3] #10 volte
+br1 = [:E4,:A3,:Cs4]
+arp3 = [:A4,:Cs4,:A3] #11 volte
+arp4 = [:Fs4,:B3,:G3] #10 volte
+br2 = [:D4,:G3]
+
+# - Intro ---------------------------------------------------------------
+4.times do
+  sample :perc_snap
+  sleep 0.5
+end
+
+# - Hi hat ---------------------------------------------------------------
+in_thread do
+  loop do
+    sample :drum_cymbal_closed, amp: 1
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.5
+    sleep 0.25
+  end
+end
+
+# - Snare -------------------------------
+in_thread do
+  loop do
+    sleep 0.5
+    sample :drum_snare_hard, amp: 1
+    sleep 0.375
+    sample :drum_snare_hard, amp: 0.5
+    sleep 0.125
+  end
+end
+
+# - Bass drum ----------------------------
+in_thread do
+  loop do
+    sample :drum_bass_soft
+    sleep 0.25
+    sample :drum_bass_soft
+    sleep 3.75
+    sample :drum_bass_soft
+    sleep 4
+  end
+end
+
+
+key_bass = scale(:e2, :chromatic, num_octaves: 2)
+
+bass_notes = [[0, 5, 10, 12],
+              [2, 5],
+              [0, 2],
+              [3, 2, 0]]
+
+# Function to play the bass
+define :play_bass do |bass_notes|
+  with_fx :compressor do
+    with_fx :lpf do
+      use_synth :bass_foundation
+      bass_notes[0].each do |nota|
+        play key_bass[nota], release: 5, attack_level: 0.7
+        sleep 0.5
+      end
+      
+      sleep 6
+      
+      
+      play key_bass[bass_notes[1][0]], release: 5, attack_level: 0.7
+      sleep 8
+      play key_bass[bass_notes[1][1]], release: 5, attack_level: 0.7
+      sleep 7.5
+      
+      bass_notes[2].each do |nota|
+        play key_bass[nota], release: 5, attack_level: 0.7
+        sleep 0.25
+      end
+      
+      bass_notes[3].each do |nota|
+        play key_bass[nota], release: 5, attack_level: 0.7
+        sleep 0.5
+      end
+      
+      sleep 6
+    end
+  end
+end
+
+# - Bass ---------------------------------------------------------
+in_thread do
+  sleep 8
+  loop do
+    play_bass bass_notes
+  end
+end
+
+# - Guitar arpeggio ----------------------------------------------
+in_thread do
+  sleep 8
+  loop do
+    use_synth :pluck
+    10.times do
+      play_pattern_timed arp1, 0.25, amp: 2, sustain: 0.225
+    end
+    
+    10.times do
+      play_pattern_timed arp2, 0.25, amp: 2, sustain: 0.225
+    end
+    
+    play_pattern_timed br1, 0.25, amp: 2, sustain: 0.225
+    
+    11.times do
+      play_pattern_timed arp3, 0.25, amp: 2, sustain: 0.225
+    end
+    
+    10.times do
+      play_pattern_timed arp4, 0.25, amp: 2, sustain: 0.225
+    end
+    
+    play_pattern_timed br2, 0.25, amp: 2, sustain: 0.225
+  end
+end
+
+# And so on...
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>joachimemile.robert@mail.polimi.it</td>
+                <td>10/11/2024 16:31:32</td>
+                <td><button onclick="openModal(19)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/5acd8d0a3eb654735f01a0ad4250db4eab4ee4968903fc6779b447d59bee3236_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal19" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(19)">×</span>
+                    <h2>Code for submission by joachimemile.robert@mail.polimi.it</h2>
+                    <pre>
+            # Welcome to Sonic Pi
+
+
+use_bpm 150
+
+mode = :minor
+my_scale = scale(:A4,mode)
+my_scaleUp = scale(:A5,mode)
+
+A = [my_scale[0], my_scaleUp[2]+1, my_scaleUp[4]]
+E = [my_scale[4], my_scale[6] +1, my_scale[1]]
+Fsm = [my_scale[5] +1 , my_scaleUp[0], my_scaleUp[2] +1]
+D = [my_scale[3], my_scale[5] +1,my_scale[0]]
+
+my_chords = [[[:A4,:major],10], [[:E4, :major],11], [[:Fs4,:minor],11], [[:D4, :major],10]]
+my_arpeges = [[A,10], [E,11], [Fsm, 11], [D,10]]
+
+
+define :play_arpege do
+  loop do
+    with_fx :reverb, mix: 0.7 do
+      with_fx :distortion, distort: 0.2 do
+        use_synth :fm
+        my_arpeges.each do |arp|
+          arp[1].times do
+            arp[0].each do |note|
+              play note, amp: 0.4
+              sleep 0.5
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
+define :play_accords do
+  loop do
+    # sync "/live_loop/arpege"
+    with_fx :reverb, mix: 0.7 do
+      use_synth :piano
+      my_chords.each do |chord|
+        chord[1].times do
+          play chord(chord[0][0],chord[0][1]), attack: 1.2,release: 4, decay: 0.2, amp: 4
+          sleep 1.5
+        end
+      end
+      cue :gogo
+    end
+  end
+end
+
+
+define :cymbal do
+  loop  do
+    sample :drum_cymbal_closed, amp: 0.4  # Hi-hat constant
+    sleep 0.5
+  end
+end
+
+define :kick do
+  loop do
+    sample :bd_tek, amp: 0.5
+    sleep 16
+  end
+end
+
+
+define :snare do
+  loop do
+    sample :sn_generic, amp: 0.3
+    sleep 0.75
+    sample :sn_generic, amp: 0.3, decay: 0.3
+    sleep 1.25
+  end
+end
+
+
+
+define :main do
+  2.times do
+    my_chords.each do |accords|
+      with_fx :reverb, mix: 0.7 do
+        use_synth :piano
+        play chord(accords[0][0],accords[0][1]), attack: 0.5, release: 6, amp: 4
+        sleep 5
+        
+      end
+    end
+  end
+  
+  in_thread do
+    cymbal
+  end
+  
+  in_thread do
+    kick
+  end
+  
+  in_thread do
+    
+    snare
+  end
+  
+  sleep 16
+  
+  in_thread do
+    play_accords
+  end
+  
+  
+  in_thread do
+    sync :gogo
+    play_arpege
+  end
+  
+end
+
+main
+
+
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>manfredi.pletti@mail.polimi.it damiano1.castelli@mail.polimi.it alessandro2.mancuso@mail.polimi.it renmu.gong@mail.polimi.it </td>
+                <td>10/11/2024 16:32:00</td>
+                <td><button onclick="openModal(20)">View Code</button></td>
+                <td>
+            Recording not found.</td></tr>
+            <div id="modal20" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(20)">×</span>
+                    <h2>Code for submission by manfredi.pletti@mail.polimi.it damiano1.castelli@mail.polimi.it alessandro2.mancuso@mail.polimi.it renmu.gong@mail.polimi.it </h2>
+                    <pre>
+            Unable to decode file content. The file may contain non-UTF-8 characters.
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>xiaohao.zhao@mail.polimi.it</td>
+                <td>10/11/2024 16:32:27</td>
+                <td><button onclick="openModal(21)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/fe3b2dd8ecf8e85c8b90dd9ed9dc671c7a8b68472015bd488ea5e63c973c1ace_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal21" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(21)">×</span>
+                    <h2>Code for submission by xiaohao.zhao@mail.polimi.it</h2>
+                    <pre>
+            use_bpm 80
+
+
+define :my_play_chord do |chord, release_time=1|
+  with_synth :prophet do  # 使用合成器
+    play_chord chord, release: release_time
+  end
+  sleep 1
+end
+
+
+define :play_arpeggio do |chord, sleep_time=0.25|
+  with_synth :blade do  # 使用合成器
+    chord.each do |note|
+      play note
+      sleep sleep_time
+    end
+  end
+end
+
+
+define :chord_progression do
+  
+  my_play_chord [:E, :G, :B, :D]    # Em7
+  my_play_chord [:Fs, :A, :Cs, :E]  # F#m7
+  my_play_chord [:A, :Cs, :E]       # A
+  my_play_chord [:G, :B, :D, :Fs]   # Gmaj7
+  
+  
+  my_play_chord [:D, :F, :A, :C]     # Dm7
+  my_play_chord [:A, :C, :E]         # A7
+  my_play_chord [:C, :E, :G]         # C
+  my_play_chord [:B, :D, :Fs]        # Bm7
+end
+
+
+define :arpeggio_progression do
+  
+  play_arpeggio [:E, :G, :B, :D]    # Em7 琶音
+  play_arpeggio [:Fs, :A, :Cs, :E]  # F#m7 琶音
+  play_arpeggio [:A, :Cs, :E]       # A 琶音
+  play_arpeggio [:G, :B, :D, :Fs]   # Gmaj7 琶音
+  
+  
+  play_arpeggio [:D, :F, :A, :C]     # Dm7 琶音
+  play_arpeggio [:A, :C, :E]         # A7 琶音
+  play_arpeggio [:C, :E, :G]         # C 琶音
+  play_arpeggio [:B, :D, :Fs]        # Bm7 琶音
+end
+
+
+define :drum_pattern do
+  with_synth :tb303 do  # 使用合成器
+    sample :bd_808, amp: 2  # 低音鼓
+    sleep 0.25              # 每隔0.25秒
+    sample :sn_dolf, amp: 1  # 小鼓
+    sleep 0.25              # 每隔0.25秒
+    sample :drum_cymbal_closed, amp: 1.5  # 闭口镲
+    sleep 0.25              # 每隔0.25秒
+    sample :drum_cymbal_open, amp: 1.2    # 开口镲
+    sleep 0.5               # 每隔0.5秒
+  end
+end
+
+
+define :ambient_sound do
+  sample :ambi_soft_buzz, amp: 0.3  # 轻柔的环境音效
+end
+
+# 和声的函数
+define :harmony_pattern do
+  with_synth :prophet do
+    play [:E, :G, :B, :D, :Fs, :A, :Cs].choose, release: 2, amp: 0.5  # 随机和声音符
+  end
+end
+
+
+live_loop :chords do
+  chord_progression
+end
+
+
+live_loop :arpeggios do
+  sync :chords
+  arpeggio_progression
+end
+
+
+live_loop :drums do
+  sync :chords
+  drum_pattern
+end
+
+
+live_loop :sounds do
+  sync :chords
+  ambient_sound
+  sleep 2
+end
+
+
+live_loop :harmony do
+  sync :chords
+  harmony_pattern
+  sleep [1.5, 2].choose
+end
+
+
+live_loop :drum_thread do
+  sync :chords
+  in_thread do
+    drum_pattern
+  end
+end
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>alper.arslan@mail.polimi.it</td>
+                <td>10/11/2024 16:32:32</td>
+                <td><button onclick="openModal(22)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/2d1ff47f7c0e0053ae002b004a5cc5a4f11bc5be0db1da5dba79ebcb8e317552_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal22" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(22)">×</span>
+                    <h2>Code for submission by alper.arslan@mail.polimi.it</h2>
+                    <pre>
+            use_bpm 165
+
+# Main beat loop
+live_loop :beat do
+  sample :drum_heavy_kick, amp: 1
+  sleep 0.5
+  sample :drum_heavy_kick, amp: 1
+  sleep 0.5
+  sample :drum_snare_hard, amp: 1
+  sleep 0.5
+  sample :drum_snare_soft, amp: 1
+  sleep 0.25
+  sample :drum_snare_soft, amp: 1
+  sleep 0.25
+end
+#live_loop :crash do
+#  sample :drum_cymbal_open, amp: 1
+#  sleep 1
+#end
+live_loop :dudut do
+  sample :glitch_robot2
+  sleep 7.5
+  sample :glitch_robot1
+  sleep 5
+  
+end
+live_loop :dudut2 do
+  sample :elec_blip, amp: 1.5
+  sleep 0.25
+end
+
+
+
+fm1 = [[62, 0.5], [55, 0.5], [52, 0.5]]
+fm2 = [[64, 0.5], [57, 0.5], [54, 0.5]]
+fm3 = [[69, 0.5], [61, 0.5], [57, 0.5]]
+fm4 = [[66, 0.5], [59, 0.5], [55, 0.5]]
+
+def play_seq(seq)
+  seq.each do |n|
+    play(n[0])
+    sleep(n[1])
+  end
+end
+
+
+live_loop :chords do
+  use_synth :piano
+  sync :melody_change
+  
+  play chord(:E, :m7), decay: 15, amp: 4
+  sleep 15
+  
+  sync :melody_change
+  play chord(:Fs, :m7), decay: 16.5, amp: 4
+  sleep 16.5
+  
+  sync :melody_change
+  play chord(:A, :major), decay: 15, amp: 4
+  sleep 15
+  
+  sync :melody_change
+  play chord(:G, :major7), decay: 16.5, amp: 4
+  sleep 16.5
+end
+
+
+
+live_loop :melody do
+  use_synth :rhodey
+  
+  10.times do
+    play_seq(fm1)
+  end
+  cue :melody_change
+  
+  11.times do
+    play_seq(fm2)
+  end
+  cue :melody_change
+  
+  11.times do
+    play_seq(fm3)
+  end
+  cue :melody_change
+  
+  10.times do
+    play_seq(fm4)
+  end
+  cue :melody_change
+end
+
+live_loop :bass do
+  use_synth :bass_foundation
+  sync :melody_change
+  play :E1, decay: 13, amp: 3
+  sleep 0.5
+  sync :melody_change
+  play :Fs1, decay: 13, amp: 3
+  sleep 0.5
+  sync :melody_change
+  play :A2, decay: 13, amp: 3
+  sleep 0.5
+  sync :melody_change
+  play :G1, decay: 13, amp: 3
+  sleep 0.5
+  
+  
+end
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>11056735@polimi.it  / 11016188@polimi.it  /  11044548@polimi.it  10766694@polimi.it  /  </td>
+                <td>10/11/2024 16:34:11</td>
+                <td><button onclick="openModal(24)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/9c333eeaf00f1547d2b9da587bf4e9634623fd4b2bf2525c7b6044df5df63a95_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal24" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(24)">×</span>
+                    <h2>Code for submission by 11056735@polimi.it  / 11016188@polimi.it  /  11044548@polimi.it  10766694@polimi.it  /  </h2>
+                    <pre>
+            use_bpm 130
+
+#Made by:
+#Jorge Cuartero 11056735
+#Mattia Dalla Costa 11016188
+#Nicola Nespoli 10766694
+#Mateo Vitalone 11044548
+
+#variables
+
+arp1=[:e4, :g4, :d5]
+arp2=[:fs4, :a4, :e5]
+arp3=[:a4, :cs5, :a5]
+arp4=[:g4, :b4, :fs5]
+bass=[:e2,:fs2,:a2,:g2]
+
+sequence=[arp1,arp2,arp3,arp4]
+
+melody=[[:d4,5],[:g4,1],[:fs4,1],[:g4,1],[:a4,1.66],[:e4,3.34],[:e4,1],[:fs4,1],[:g4,1],[:g4,1.66],[:fs4,3.44],[:g4,1 ],[:fs4,1],[:e4,1],[:e4, 1.66],[:d4, 1]]
+
+#functions
+
+def play_melody(melody)
+  with_fx :echo, phase: 0.1, decay: 2, amp: 0.2 do
+    with_fx :reverb do
+      melody.each do |x|
+        play x[0], amp: 3
+        sleep x[1]
+      end
+    end
+  end
+end
+
+def pad(seq)
+  with_fx :reverb , room: 1 do
+    with_fx :lpf, cutoff: 65, res: 0.2 do
+      cue :metronome
+      use_synth :organ_tonewheel
+      play seq[2], amp: 1.3, release: 2
+      play seq[1], amp: 1.3, release: 2
+      play seq[0], amp: 1.3, release: 2
+    end
+  end
+end
+
+def arpegio(seq)
+  2.times do
+    cue :metronome
+    with_fx :reverb , room: 1 do
+      with_fx :rhpf, cutoff: 70, res: 0.2 do
+        use_synth :fm
+        play seq[2], amp: rrand(0.1,0.4)
+        sleep 0.66
+        play seq[1], amp: rrand(0.1,0.4)
+        sleep 0.33
+        play seq[0], amp: rrand(0.1,0.4)
+        sleep 0.55
+        play seq[2], amp: rrand(0.1,0.4)
+        sleep 1.45
+        play seq[1], amp: rrand(0.1,0.4)
+        sleep 0.66
+        play seq[0], amp: rrand(0.1,0.4)
+        sleep 0.34
+      end
+    end
+  end
+end
+
+#loops
+
+in_thread do
+  3.times do
+    sequence.each do |n|
+      pad(n)
+      arpegio(n)
+    end
+    cue :completeturn
+  end
+  cue :end
+end
+
+in_thread do
+  loop do
+    sync :metronome
+    sample :bd_haus, amp: 1
+    sleep 0.66
+    sample :bd_haus, amp: 1
+    sleep 0.34
+    sample :drum_snare_soft, amp: 2
+    sleep 0.66
+    sample :bd_haus, amp: 1
+    sleep 1.34
+    sample :drum_snare_soft, amp: 2
+  end
+end
+
+sync :metronome
+7.times do
+  sample :drum_cymbal_closed, amp: 0.6
+  sleep 1
+end
+sample :drum_cymbal_closed, amp: 0.6
+
+
+in_thread do
+  loop do
+    sync :metronome
+    3.times do
+      sample :drum_cymbal_closed, amp: 0.4
+      sleep 0.66
+      sample :drum_cymbal_closed, amp: 0.4
+      sleep 0.34
+    end
+    hh_rate=rrand(0.8,1.2)
+    sample :drum_cymbal_hard, amp: 1, rate: 0.7, sustain: 2 if one_in(6)
+    sample :drum_cymbal_closed, amp: 0.4, rate: hh_rate
+    sleep 0.33
+    sample :drum_cymbal_closed, amp: 0.4, rate: hh_rate
+    sleep 0.33
+    sample :drum_cymbal_closed, amp: 0.4, rate: hh_rate
+  end
+end
+
+sync :completeturn
+
+in_thread do
+  loop do
+    play_melody(melody)
+    sync :completeturn
+  end
+end
+
+in_thread do
+  loop do
+    amp_bass = 2
+    use_synth :beep
+    bass.each do |i|
+      2.times do
+        play i, release: 4
+        sleep 4
+      end
+      sync :metronome
+    end
+  end
+end
+
+sync :end
+
+in_thread do
+  play_melody(melody)
+  sync :completeturn
+end
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>michele.zanardi@mail.polimi.it, gianluigi.vecchini@mail.polimi.it, ipekceren.bayram@mail.polimi.it, federico1.capitani@mail.polimi.it</td>
+                <td>10/11/2024 16:36:01</td>
+                <td><button onclick="openModal(25)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/aa88fa0ee95bab17d4c02590dc3b8bb31efb591731eb4bcc6c646b0d4e2e455c_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal25" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(25)">×</span>
+                    <h2>Code for submission by michele.zanardi@mail.polimi.it, gianluigi.vecchini@mail.polimi.it, ipekceren.bayram@mail.polimi.it, federico1.capitani@mail.polimi.it</h2>
+                    <pre>
+            # WEIRD FISHES - 11/10/2024
+
+# GROUP COMPOSED BY
+# IPEK CEREN BAYRAM
+# GIANLUIGI VECCHINI
+# FEDERICO CAPITANI
+# MICHELE ZANARDI
+
+
+###############################
+
+
+#GUITAR
+
+Em7 = [:d4, :g3, :e3]
+Fsm7 = [:e4, :a3, :fs3]
+A = [:a4, :e3, :a3]
+A7 = [:g4, :e3, :a3]
+A6 = [:fs4, :e3, :a3]
+Gmaj7 = [:fs4, :b3, :g3]
+
+def play_arp(arp)
+  arp.each do |n|
+    use_synth :pluck
+    with_fx :reverb, mix: 0.6, room: 0.75 do
+      play n, attack: 0.01, release: 0.5
+    end
+    sleep 0.25
+  end
+end
+
+def guitar_verse_1
+  10.times do
+    play_arp(Em7)
+  end
+  
+  11.times do
+    play_arp(Fsm7)
+  end
+  
+  11.times do
+    play_arp(A)
+  end
+  
+  10.times do
+    play_arp(Gmaj7)
+  end
+end
+
+def guitar_verse_2
+  
+  10.times do
+    play_arp(Em7)
+  end
+  
+  11.times do
+    play_arp(Fsm7)
+  end
+  
+  6.times do
+    play_arp(A)
+  end
+  
+  3.times do
+    play_arp(A7)
+  end
+  
+  2.times do
+    play_arp(A6)
+  end
+  
+  10.times do
+    play_arp(Gmaj7)
+  end
+end
+
+#DRUMS
+
+def kick
+  sample :drum_bass_soft
+  sleep 0.25
+  sample :drum_bass_hard
+  sleep 1.75
+  sample :drum_bass_hard
+  sleep 2
+end
+
+def snare
+  sleep 0.5
+  sample :drum_snare_soft
+  sleep 0.375
+  sample :drum_snare_soft
+  sleep 0.625
+  sample :drum_snare_soft
+  sleep 0.375
+  sample :drum_snare_soft
+  sleep 0.625
+  sample :drum_snare_soft
+  sleep 0.375
+  sample :drum_snare_soft
+  sleep 0.625
+  sample :drum_snare_soft
+  sleep 0.5
+end
+
+def hi_hat
+  16.times do
+    sample :hat_cab, amp: 0.5
+    sleep 0.25
+  end
+end
+
+def ride
+  16.times do
+    sample :drum_cymbal_soft
+    sleep 0.25
+  end
+end
+
+def drum_pattern_verse_1
+  in_thread do
+    play kick
+  end
+  
+  in_thread do
+    play snare
+  end
+  
+  in_thread do
+    play hi_hat
+  end
+  sleep 4
+end
+
+def drum_pattern_verse_2
+  4.times do
+    in_thread do
+      play kick
+    end
+    
+    in_thread do
+      play snare
+    end
+    
+    in_thread do
+      play ride
+    end
+    sleep 2
+  end
+end
+
+
+def beginningdrum
+  4.times do
+    sample :hat_bdu
+    sleep 0.5
+  end
+end
+
+#BASS
+
+def bass (n, l, r, a)
+  use_synth :sine
+  play n, amp: 1.3-a, sustain: l, release: r
+  play n+12, amp: 0.2, sustain: l, release: r
+  play n+24, amp: 0.05, sustain: l, release: r
+  use_synth :tri
+  play n, amp: 1.3-a, sustain: l, release: r
+end
+
+def bass_pattern_1
+  2.times do
+    bass(:e1, 0.2, 0.1, 0)
+    sleep 0.25
+  end
+  bass(:a1, 0.5, 0.1, 0.2)
+  sleep 0.5
+  bass(:d2, 0.5, 0.1, 0.2)
+  sleep 0.5
+  bass(:e2, 5, 4.5, 0.2)
+  
+  sleep 6.5
+  
+  bass(:fs1, 7, 6.5, 0.2)
+  
+  sleep 8
+  
+  bass(:a1, 6, 5.5, 0.2)
+  
+  sleep 7.5
+  
+  bass(:e1, 0.2, 0.1, 0.2)
+  sleep 0.25
+  bass(:fs1, 0.2, 0.1, 0.2)
+  sleep 0.25
+  bass(:g1, 0.5, 0.1, 0.2)
+  sleep 0.5
+  bass(:fs1, 0.5, 0.1, 0.2)
+  sleep 0.5
+  bass(:e1, 0.5, 0.1, 0.2)
+  sleep 0.5
+  bass(:e2, 5, 4.5, 0.1)
+  
+  sleep 6.5
+end
+
+
+def bass_pattern_2
+  2.times do
+    bass(:e1, 0.2, 0.1, 0)
+    sleep 0.25
+  end
+  
+  bass(:a1, 0.5, 0.1, 0.2)
+  sleep 0.5
+  bass(:d2, 0.5, 0.1, 0.2)
+  sleep 0.5
+  bass(:e2, 5, 4.5, 0.2)
+  
+  sleep 6.5
+  
+  bass(:fs1, 7, 6.5, 0.2)
+  
+  sleep 8
+  
+  bass(:a1, 7, 6.5, 0.2)
+  
+  sleep 8
+  
+  bass(:a1, 0.2, 0.1, 0)
+  sleep 0.25
+  bass(:b1, 0.2, 0.1, 0)
+  sleep 0.25
+  bass(:g1, 1.5, 1.25, 0.1)
+  sleep 3.25
+  bass(:fs1, 0.2, 0.1, 0)
+  sleep 0.25
+  bass(:g1, 1.5, 1, 0.1)
+  sleep 3.5
+  bass(:g1, 0.5, 0.1, 0.1)
+  sleep 0.5
+end
+
+
+
+
+
+
+#SECOND GUITAR
+
+secEm7 = [:e5, :g5, :d5]
+secBm4 = [:e5, :d5, :b4]
+secFdiesism7 = [:e6, :e5, :cs5]
+secEm4 = [:a5, :e6, :e5]
+
+$notecasual = [secEm7, secBm4, secFdiesism7, secEm4]
+
+def second_guitar
+  $notecasual.each do |acc|
+    use_synth :fm
+    with_fx :pan, pan: -1 do
+      with_fx :reverb, amp: 0.5, mix: 1, dry: 0.5 do
+        (4*8).times do
+          play acc.sample, pan: -1
+          sleep 0.25
+        end
+      end
+    end
+  end
+end
+
+
+
+
+
+#SONG
+
+
+beginningdrum
+
+2.times do
+  drum_pattern_verse_1
+end
+
+
+t1 = in_thread do
+  8.times do
+    drum_pattern_verse_1
+  end
+end
+
+t2= in_thread do
+  guitar_verse_1
+end
+
+t7 = in_thread do
+  bass_pattern_1
+end
+
+sleep 32
+
+t3 = in_thread do
+  8.times do
+    drum_pattern_verse_1
+  end
+end
+
+t4 = in_thread do
+  guitar_verse_2
+end
+
+t8 = in_thread do
+  bass_pattern_2
+end
+
+sleep 32
+
+t5 = in_thread do
+  guitar_verse_1
+end
+
+t6 = in_thread do
+  second_guitar
+end
+
+t9 = in_thread do
+  bass_pattern_1
+end
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>sebastianraul.gomez@mail.polimi.it , margarita.makurina@mail.polimi.it</td>
+                <td>10/11/2024 16:37:22</td>
+                <td><button onclick="openModal(26)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/fe0af573a8ef626dfef040bb07e27d0495c9d5c2bfc8e8fae3a1fb1c84c93654_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal26" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(26)">×</span>
+                    <h2>Code for submission by sebastianraul.gomez@mail.polimi.it , margarita.makurina@mail.polimi.it</h2>
+                    <pre>
+            use_bpm 153
+
+# vars
+$r1 = [:b, :fs, :d];
+$r2 = [:a, :cs, :e];
+$r3 = [:g, :b, :d];
+$r4 = [:e, :g, :b];
+$sleep_time = 0.5;
+
+# definition of functions
+
+def play_seq(seq)
+  seq.each do |n|
+    play seq
+    sleep $sleep_time
+  end
+end
+
+in_thread do :chords
+  use_synth :beep
+  loop do
+    10.times do
+      play_seq($r1);
+    end
+    11.times do
+      play_seq($r2);
+    end
+    11.times do
+      play_seq($r3);
+    end
+    10.times do
+      play_seq($r4);
+    end
+  end
+end
+
+in_thread do :drums
+  loop do
+    'sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+    sleep 1'
+    sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+    sleep 1
+    sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+    sleep 0.5
+    sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+    sleep 0.5
+    sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+    sleep 1
+    sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+    sleep 1
+  end
+end
+
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>flavio.delellis@mail.polimi.it   filippo.garofalo@mail.polimi.it</td>
+                <td>10/11/2024 17:14:24</td>
+                <td><button onclick="openModal(27)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/df944aa39e9496b4b52ff22ee850cbbbcd8a73c12c2c0ec285b36b381bf34010_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal27" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(27)">×</span>
+                    <h2>Code for submission by flavio.delellis@mail.polimi.it   filippo.garofalo@mail.polimi.it</h2>
+                    <pre>
+            use_bpm 153
+
+define :arpeggiator do |chord_notes, pattern|
+  pattern.each do |p|
+    play chord_notes[p]
+    sleep 0.5
+  end
+end
+
+define :pad do
+  
+  with_fx :hpf , cutoff: 70 do
+    with_fx :lpf ,cutoff: 100+ 30*Math.sin(vt * 0.5   * Math::PI) , amp:1 do
+      with_fx :bitcrusher , cutoff:100  do
+        with_fx :flanger, amp: 0.8 , phase: 2 do
+          use_synth :blade
+          2.times do
+            play_chord [:e3 , :g3 , :b3] , release: 5, attack: 2, cutoff: 95 ,
+              vibrato_depth: 0
+            sleep 4
+            play_chord [:fs3 , :a3 , :cs4] , release: 5, attack: 2, cutoff: 95 ,
+              vibrato_depth: 0
+            sleep 4
+            play_chord [:a3 , :cs4 , :e4] , release: 5, attack: 2, cutoff: 95 ,
+              vibrato_depth: 0
+            sleep 4
+            play_chord [:g3 , :b4 , :d4] , release: 5, attack: 2, cutoff: 95 ,
+              vibrato_depth: 0
+            sleep 4
+            play_chord [:a3 , :cs4 , :e4] , release: 5, attack: 2, cutoff: 95 ,
+              vibrato_depth: 0
+            sleep 4
+            play_chord [:fs3 , :a3 , :cs4] , release: 5, attack: 2, cutoff: 95 ,
+              vibrato_depth: 0
+            sleep 4
+            play_chord [:a3 , :cs4 , :e4] , release: 5, attack: 2, cutoff: 95 ,
+              vibrato_depth: 0
+            sleep 4
+            play_chord [:g3 , :b4 , :d4] , release: 5, attack: 2, cutoff: 95 ,
+              vibrato_depth: 0
+            sleep 4
+          end
+          
+        end
+      end
+    end
+  end
+end
+
+define :pluck do
+  
+  use_synth :pluck
+  
+  with_fx :lpf , cutoff:120 , amp: 0.8 do
+    with_fx :bitcrusher , amp: 0.5 do
+      with_fx :reverb , mix: 0.8 , amp: 1 do
+        sleep 16
+        1.times do
+          10.times do
+            arpeggiator(chord(:e3, :minor), [2, 1, 0])
+          end
+          10.times do
+            arpeggiator(chord(:fs3, :minor7), [2, 1, 0])
+          end
+          10.times do
+            arpeggiator(chord(:a3, :major), [2, 1, 0])
+          end
+          10.times do
+            arpeggiator(chord(:g3, :major), [2, 1, 0])
+          end
+          10.times do
+            arpeggiator(chord(:a3, :major), [2, 1, 0])
+          end
+          10.times do
+            arpeggiator(chord(:fs3, :minor7), [2, 1, 0])
+          end
+          10.times do
+            arpeggiator(chord(:a3, :major), [2, 1, 0])
+          end
+          10.times do
+            arpeggiator(chord(:g3, :major7), [2, 1, 0])
+          end
+        end
+      end
+    end
+  end
+end
+
+
+
+define :distorted_pad do
+  use_synth :prophet
+  with_fx :hpf , cutoff: 90  , amp: 0.4 do
+    with_fx :wobble do
+      with_fx :lpf , cutoff: 100 do
+        with_fx :reverb , room: 0.5 do
+          with_fx :distortion, distort: 0.2 do
+            with_fx :echo, phase: 0.75, decay: 3 , mix: 0.7  do
+              with_fx :reverb, room: 0.9, mix: 0.6 do
+                sleep 16
+                play :e4, attack: 1, release: 6
+                sleep 4
+                play :fs4, attack: 2, release: 6
+                sleep 4
+                play :a4, attack: 2, release: 6
+                sleep 4
+                play :g4, attack: 2, release: 6
+                sleep 4
+                play :a4, attack: 2, release: 6
+                sleep 4
+                play :fs4, attack: 2, release: 6
+                sleep 4
+                play :a4, attack: 2, release: 6
+                sleep 4
+                play :g4, attack: 2, release: 6
+                sleep 4
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
+
+
+define :rhodes do
+  use_synth :piano
+  with_fx :lpf , cutoff: 100 do
+    with_fx :panslicer  , pulse_width: 0.25 , amp: 0.5 do
+      with_fx :flanger   do
+        with_fx :reverb, room: 0.7, mix: 0.5 do  # Add some reverb for warmth and space
+          with_fx :distortion, distort: 0.1 do  # Slight distortion to mimic electric Rhodes overdrive
+            with_fx :echo, depth: 1, mix: 0.7 , decay: 3 do  # Simulate the natural shimmer of the Rhodes
+              sleep 32
+              10.times do
+                arpeggiator(chord(:e3, :minor), [2, 1, 0])
+              end
+              10.times do
+                arpeggiator(chord(:fs3, :minor7), [2, 1, 0])
+              end
+              10.times do
+                arpeggiator(chord(:a3, :major), [2, 1, 0])
+              end
+              10.times do
+                arpeggiator(chord(:g3, :major), [2, 1, 0])
+              end
+              10.times do
+                arpeggiator(chord(:a3, :major), [2, 1, 0])
+              end
+              10.times do
+                arpeggiator(chord(:fs3, :minor7), [2, 1, 0])
+              end
+              10.times do
+                arpeggiator(chord(:a3, :major), [2, 1, 0])
+              end
+              10.times do
+                arpeggiator(chord(:g3, :major7), [2, 1, 0])
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
+
+define :bass do
+  sync :tick
+  with_fx :mono do
+    with_fx :distortion , amp:2 do
+      with_fx :krush , amp: 0.2 , cutoff: 70  do
+        with_fx :lpf , cutoff:90 do
+          use_synth :bass_foundation
+          sleep 16
+          play :e1 , release: 4 , attack: 0.3
+          sleep 4
+          play :fs1 , release: 4 , attack: 0.3
+          sleep 4
+          play :a1, release: 4 , attack: 0.3
+          sleep 4
+          play :g1 , release: 4 , attack: 0.3
+          sleep 4
+          play :e1 , release: 4 , attack: 0.3
+          sleep 4
+          play :fs1 , release: 4 , attack: 0.3
+          sleep 4
+          play :a1 , release: 4 , attack: 0.3
+          sleep 4
+          play :g1 , release: 4 , attack: 0.3
+          sleep 4
+        end
+      end
+    end
+  end
+end
+
+##| #Drums
+
+define :hi_hat do
+  with_fx :flanger , depth: 0.5, feedback: 0.6 , amp: 0.4+0.25*Math.sin(vt * 0.5   * Math::PI) do
+    sleep 16
+    128.times do
+      sample :drum_cymbal_closed, rate: 2  # rate of 2 raises pitch by an octav
+      sleep 0.5
+    end
+  end
+end
+
+define :boom do
+  with_fx :distortion , distort: 0.01 do
+    sleep 16
+    16.times do
+      sample :bd_boom
+      sleep 8
+    end
+  end
+end
+
+define :snare do
+  sleep 32
+  32.times do
+    sleep 1
+    sample :drum_snare_hard
+    sleep 1
+  end
+end
+
+define :snare2 do
+  with_fx :reverb do
+    sleep 32
+    32.times do
+      sleep 1.75
+      sample :drum_snare_soft
+      sleep 0.25
+    end
+  end
+end
+
+define :kick do
+  sleep 32
+  16.times do
+    sample :drum_heavy_kick
+    sleep 0.5
+    sample :drum_heavy_kick
+    sleep 7.5
+    sample :drum_heavy_kick
+    sleep 8
+  end
+end
+
+#Pad
+in_thread do
+  pad
+end
+
+in_thread do
+  pluck
+end
+
+in_thread do
+  bass
+end
+
+in_thread do
+  hi_hat
+end
+
+in_thread do
+  snare
+end
+
+in_thread do
+  snare2
+end
+
+in_thread do
+  boom
+end
+
+in_thread do
+  pad
+end
+
+in_thread do
+  pluck
+end
+
+in_thread do
+  rhodes
+end
+
+in_thread do
+  pad
+end
+
+in_thread do
+  pluck
+end
+
+in_thread do
+  distorted_pad
+end
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>ylenia.piromalli@gmail.com</td>
+                <td>10/11/2024 17:27:19</td>
+                <td><button onclick="openModal(28)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/989195c875660b6bd586f521083f95270ba6bb1e9f87ab65df6427ba6c39783a_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal28" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(28)">×</span>
+                    <h2>Code for submission by ylenia.piromalli@gmail.com</h2>
+                    <pre>
+            use_bpm 150
+
+set :b, 4.0
+
+in_thread do
+  loop do
+    sample :hat_bdu, amp: 0.9
+    sleep (get :b)/8
+  end
+end
+
+in_thread do
+  loop do
+    sample :bd_tek, amp: 3
+    sleep (get :b)/8
+    sample :bd_tek
+    sleep (get :b)/8*7
+    sample :bd_tek, amp: 2
+    sleep (get :b)
+  end
+end
+
+in_thread do
+  loop do
+    sleep (get :b)/4
+    sample :drum_snare_hard, amp: 1.2
+    sleep (get :b)/16*3
+    sample :drum_snare_soft, amp: 0.8
+    sleep (get :b)/16*1
+  end
+end
+
+in_thread do
+  loop do
+    use_synth :tech_saws
+    sleep (get :b)*16
+    play 50, decay: 8, decay_level: 0, attack: 8, sustain: 20, sustain_level: 1
+      end
+end
+
+
+in_thread do
+  use_synth :mod_fm
+  sync :tick1
+  play 50, decay: 5, decay_level: 0, attack: 8,  sustain_level: 1
+  sync :tick2
+  play 52, decay: 5, decay_level: 0, attack: 8,  sustain_level: 1
+  sync :tick3
+  play 57, decay: 5, decay_level: 0, attack: 8,  sustain_level: 1
+  sync :tick4
+  play 54, decay: 5, decay_level: 0, attack: 8,  sustain_level: 1
+  
+end
+
+
+define :arp1lo do
+  use_synth :dtri
+  play 62, release: 2
+  sleep (get :b)/8
+  play 55
+  sleep (get :b)/8
+  play 52
+  sleep (get :b)/8
+end
+
+define :arp2lo do
+  use_synth :dtri
+  play 64, release: 2
+  sleep (get :b)/8
+  play 57
+  sleep (get :b)/8
+  play 54
+  sleep (get :b)/8
+end
+
+define :arp3lo do
+  use_synth :dtri
+  play 69, release: 2
+  sleep (get :b)/8
+  play 61
+  sleep (get :b)/8
+  play 57
+  sleep (get :b)/8
+end
+
+define :arp4lo do
+  use_synth :dtri
+  play 66, release: 2#
+  sleep (get :b)/8
+  play 59
+  sleep (get :b)/8
+  #play 62
+  play 55
+  sleep (get :b)/8
+end
+
+define :arp1hi do
+  use_synth :dtri
+  play 74, release: 2
+  sleep (get :b)/8
+  play 67
+  sleep (get :b)/8
+  play 64
+  sleep (get :b)/8
+end
+
+define :arp2hi do
+  use_synth :dtri
+  play 76, release: 2
+  sleep (get :b)/8
+  play 69
+  sleep (get :b)/8
+  play 66
+  sleep (get :b)/8
+end
+
+define :arp3hi do
+  use_synth :dtri
+  play 81, release: 2
+  sleep (get :b)/8
+  play 73
+  sleep (get :b)/8
+  play 69
+  sleep (get :b)/8
+end
+
+define :arp4hi do
+  use_synth :dtri
+  play 78, release: 2
+  sleep (get :b)/8
+  play 71
+  sleep (get :b)/8
+  #play 62
+  play 67
+  sleep (get :b)/8
+end
+
+in_thread do
+  loop do
+    cue :tick1
+    10.times do
+      arp1lo
+    end
+    cue :tick2
+    10.times do
+      arp2lo
+    end
+    cue :tick3
+    10.times do
+      arp3lo
+    end
+    cue :tick4
+    10.times do
+      arp4lo
+    end
+    
+    cue :tick5
+    5.times do
+      arp1lo
+      arp1hi
+    end
+    cue :tick6
+    5.times do
+      arp2lo
+      arp2hi
+    end
+    cue :tick7
+    5.times do
+      arp3lo
+      arp3hi
+    end
+    cue :tick8
+    5.times do
+      arp4lo
+      arp4hi
+    end
+    
+    10.times do
+      
+      arp1hi
+    end
+    10.times do
+      arp2hi
+    end
+    10.times do
+      arp3hi
+    end
+    10.times do
+      arp4hi
+    end
+  end
+  
+end
+
+
+
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>elena.molinari@mail.polimi.it,emanuele.turbanti@mail.polimi.it,antonio1.pappalardo@mail.polimi.it,claudio.costantini@mail.polimi.it </td>
+                <td>10/11/2024 20:05:07</td>
+                <td><button onclick="openModal(29)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/b95bddd8f36d892e790ae1f89ce2ef8d8be6bcc96b23f9094e8a092b23fe6d55_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal29" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(29)">×</span>
+                    <h2>Code for submission by elena.molinari@mail.polimi.it,emanuele.turbanti@mail.polimi.it,antonio1.pappalardo@mail.polimi.it,claudio.costantini@mail.polimi.it </h2>
+                    <pre>
+            use_bpm 153
+
+# Metronome loop
+live_loop :met1 do
+  cue :met1
+  sleep 2
+end
+
+# Drum loop syncing to metronome
+live_loop :rides do
+  sync :met1
+  sample :drum_bass_hard, amp: 0.2, release: 0.1
+  sleep 1
+  
+end
+
+# Define named arpeggios
+a = [[:d4, 1.8], [:g3, 1.2], [:e3, 1]]
+b = [[:e4, 1.8], [:a3, 1.2], [:fs3, 1]]
+c = [[:a4, 1.8], [:cs4, 1.2], [:a3, 1]]
+d = [[:fs4, 1.8], [:b3, 1.2], [:g3, 1]]
+e = [[:g4, 1.8], [:cs4, 1.2], [:a3, 1]]
+f = [[:fs4, 1.8], [:cs4, 1.2], [:a3, 1]]
+g = [[:fs4, 1.8], [:cs4, 1.2], [:b3, 1]]
+
+# Helper function to play an arpeggio n times
+define :play_arp do |arp, times|
+  times.times do
+    arp.each do |note|
+      use_synth :blade
+      play note[0], cutoff: 90, amp: note[1]
+      sleep 0.5
+    end
+  end
+end
+
+# Arpeggio loop syncing to metronome
+live_loop :arpeggi do
+  sync :met1
+  play_arp(a, 10)
+  play_arp(b, 11)
+  play_arp(c, 11)
+  play_arp(d, 10)
+  play_arp(a, 11)
+  play_arp(b, 11)
+  play_arp(c, 5)
+  play_arp(e, 3)
+  play_arp(f, 1)
+  play_arp(g, 1)
+end
+
+# Strings loop syncing to metronome
+live_loop :strings do
+  sync :met1
+  use_synth :rhodey
+  
+  play :d2, amp: 0.1
+  
+  
+end
+
+
+define :rslice  do
+  sync :met1
+  direction = 1
+  sample :loop_amen, beat_stretch: 4, rate: direction
+  sleep 4
+  sample :loop_amen, beat_stretch: 4,  start: 0.5, finish: 1, rate: direction # Suona un frammento al contrario
+  sleep 2
+  sample :loop_amen, beat_stretch: 4,  start: 0.5, finish: 1, rate: direction  # Suona un frammento al contrario
+  sleep 2
+  sample :loop_amen, beat_stretch: 4,  start: 0.5, finish: 1, rate: direction  # Suona un frammento al contrario
+  sleep 2
+  sample :loop_amen, beat_stretch: 4,  start: 0.5, finish: 1, rate: direction  # Suona un frammento al contrario
+  sleep 2
+  sample :loop_amen, beat_stretch: 4,  start: 0.5, finish: 1, rate: direction  # Suona un frammento al contrario
+  sleep 2
+  sample :loop_amen, beat_stretch: 4,  start: 0.5, finish: 1, rate: direction  # Suona un frammento al contrario
+end
+
+sleep 16
+live_loop :random_synth_d4 do
+  
+  synths = [:saw, :prophet, :blade, :fm, :tb303, :subpulse, :dark_ambience, :hoover]
+  
+  
+  use_synth synths.choose
+  
+  play :d4, release: 0.8
+  
+  sleep 1
+end
+
+
+sleep 32
+live_loop :rides do
+  sync :met1
+  sample :drum_bass_hard, amp: 0.2, release: 0.1
+  
+  sleep 1
+  sample :drum_cymbal_open, amp: 0.2, release: 0.1
+end
+live_loop :drums do
+  rslice
+end
+                    </pre>
+                </div>
+            </div>
+            
+            <tr>
+                <td>margarita.makurina@mail.polimi.it sebastianraul.gomez@mail.polimi.it</td>
+                <td>10/14/2024 11:38:34</td>
+                <td><button onclick="openModal(31)">View Code</button></td>
+                <td>
+            
+                <audio controls>
+                    <source src="output/recordings/b906fd43c00c7542e6b96df072f98597bf1f9bd1fbf47c8a5307ab8152b305b3_60s.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                </td></tr>
+            <div id="modal31" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal(31)">×</span>
+                    <h2>Code for submission by margarita.makurina@mail.polimi.it sebastianraul.gomez@mail.polimi.it</h2>
+                    <pre>
+            use_bpm 153
+
+# vars
+$r1 = [:b4, :fs4, :d4];
+$r2 = [:a4, :cs4, :e4];
+$r3 = [:g4, :b4, :d4];
+$r4 = [:e4, :g4, :b4];
+$sleep_time = 0.5;
+
+$r12 = [:b3, :fs3, :d3];
+$r22= [:a3, :cs3, :e3];
+$r32 = [:g3, :b3, :d3];
+$r42 = [:e3, :g3, :b3];
+
+$amp = 0.8;
+
+# definition of functions
+
+def play_seq(seq, amp)
+  seq.each do |n|
+    play seq, amp: amp
+    sleep $sleep_time
+  end
+end
+
+def hi_hats()
+  'sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+    sleep 1'
+  sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+  sleep 0.5
+  sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+  sleep 0.25
+  sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+  sleep 0.25
+  sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+  sleep 0.5
+  sample :drum_cymbal_closed, rate: 1, amp: rand(1) * 0.5 + 0.5
+  sleep 0.5
+end
+
+# Kick and snare pattern (basic groove)
+def kick_snare()
+  sample :drum_bass_soft, amp: 2, rate: 1
+  sleep 1.5
+  sample :drum_snare_soft, amp: 1.5
+  sleep 1
+  sample :drum_bass_soft, amp: 2, rate: 1
+  sleep 0.5
+  sample :drum_snare_soft, amp: 1.5
+  sleep 1
+end
+
+#claps, beginning
+4.times do
+  sample :perc_snap, rate: 1, amp: 2
+  sleep 1
+end
+
+in_thread do
+  loop do
+    8.times do
+      hi_hats()
+    end
+    cue :drums
+  end
+end
+in_thread do
+  loop do
+    8.times do
+      kick_snare()
+    end
+  end
+end
+
+in_thread do :chords
+  with_fx :echo do
+    sync :drums
+    use_synth :beep
+    loop do
+      10.times do
+        play_seq($r1, $amp);
+      end
+      11.times do
+        play_seq($r2, $amp);
+      end
+      11.times do
+        play_seq($r3, $amp);
+      end
+      10.times do
+        play_seq($r4, $amp);
+      end
+    end
+  end
+end
+
+in_thread do :chords
+  with_fx :slicer do
+    sync :drums
+    use_synth :beep
+    loop do
+      10.times do
+        play_seq($r1, $amp/2);
+      end
+      11.times do
+        play_seq($r2, $amp/2);
+      end
+      11.times do
+        play_seq($r3, $amp/2);
+      end
+      10.times do
+        play_seq($r4, $amp/2);
+      end
+    end
+  end
+end
+
+in_thread do :chords
+  sync :drums
+  use_synth :beep
+  loop do
+    10.times do
+      play_seq($r12, $amp);
+    end
+    11.times do
+      play_seq($r22, $amp);
+    end
+    11.times do
+      play_seq($r32, $amp);
+    end
+    10.times do
+      play_seq($r42, $amp);
+    end
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+                    </pre>
+                </div>
+            </div>
+            
+        </table>
+        <script>
+        function openModal(index) {
+            document.getElementById(`modal${index}`).style.display = "block";
+        }
+
+        function closeModal(index) {
+            document.getElementById(`modal${index}`).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        }
+        </script>
+    </body>
+    </html>
+    
